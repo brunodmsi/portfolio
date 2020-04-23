@@ -1,0 +1,12 @@
+{
+  "name": "contact",
+  "version": "1.0.0",
+  "description": "A form for you to contact me",
+  "dependencies": {
+    "@rocketseat/unform": "^1.6.2",
+    "polished": "^3.5.2",
+    "styled-components": "^5.1.0",
+    "typescript": "~3.7.2",
+    "yup": "^0.28.4"
+  }
+}

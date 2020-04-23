@@ -1,15 +1,11 @@
 import styled from 'styled-components';
 import { shade } from 'polished';
 
-export const Wrapper = styled.aside`
+export const Wrapper = styled.div`
   display: flex;
   width: 100px;
   background-color: #181818;
-  height: 100%;
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 10;
+  min-height: 100vh;
   border-right: 1px solid ${shade(0.1, '#181818')};
 
   flex-direction: column;
@@ -25,8 +21,26 @@ export const Wrapper = styled.aside`
     align-items: center;
     justify-content: center;
 
-    svg + svg {
-      margin-top: 30px;
+    div {
+      padding: 10px;
+      transition: color 0.2s;
+      transition: transform 0.2s;
+
+      &:hover {
+        transform: translateX(5px);
+
+        svg {
+          color: #49caeb;
+        }
+      }
+
+      & + div {
+        margin-top: 10px;
+      }
+
+      svg {
+        color: #4f4f4f;
+      }
     }
   }
 
@@ -37,8 +51,25 @@ export const Wrapper = styled.aside`
 
     align-items: center;
 
-    a + a {
-      margin-top: 20px;
+    div {
+      padding: 10px;
+      transition: color 0.2s;
+      transition: transform 0.2s;
+
+      &:hover {
+        transform: translateX(5px);
+
+        svg {
+          color: #49caeb;
+        }
+      }
+
+      & + div {
+        margin-top: 10px;
+      }
+      svg {
+        color: #4f4f4f;
+      }
     }
   }
 `;

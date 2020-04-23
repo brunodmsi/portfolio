@@ -4,28 +4,22 @@ import {
   RouteProps as ReactDOMRouteProps,
 } from 'react-router-dom';
 
-import SideBar from '../components/SideBar';
+import DefaultLayout from '../pages/_layouts/Default';
 
 interface RouteProps extends ReactDOMRouteProps {
   component: React.ComponentType;
 }
 
 const Route: React.FC<RouteProps> = ({ component: Component, ...rest }) => {
-  const DefaultLayout: React.FC = ({ children }) => (
-    <>
-      <SideBar />
-
-      {children}
-    </>
-  );
+  const Layout = DefaultLayout;
 
   return (
     <ReactDOMRoute
       {...rest}
       render={() => (
-        <DefaultLayout>
+        <Layout>
           <Component />
-        </DefaultLayout>
+        </Layout>
       )}
     />
   );

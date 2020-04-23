@@ -1,21 +1,45 @@
 import React from 'react';
-import {
-  FaHome,
-  FaCode,
-  FaUser,
-  FaEnvelope,
-  FaGithub,
-  FaLinkedinIn,
-  FaFacebook,
-} from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 import OutlineItem from '../../components/OutlineItem';
-import SideBar from '../../components/SideBar';
+import PrettyJSON from '../../components/PrettyJSON';
+import homeJSON from '../../json/home.json';
 
-import { Content } from './styles';
+import { Container, Introduction } from './styles';
 
 const Home: React.FC = () => {
-  return <h1>Home</h1>;
+  return (
+    <Container>
+      <Introduction>
+        <code>&lt;/&gt;</code>
+
+        <h1>Hi, I&apos;m</h1>
+
+        <OutlineItem
+          outline={{ color: '#ec1839' }}
+          textColor="#fefefe"
+          size={70}
+        >
+          Bruno De Masi
+        </OutlineItem>
+
+        <h3>Full Stack developer</h3>
+        <span>Working mainly with JavaScript technologies.</span>
+
+        <Link to="/contact">Contact me</Link>
+      </Introduction>
+
+      <PrettyJSON
+        jsonObject={homeJSON}
+        colors={{
+          punctuation: '#fff',
+          key: '#a3fff3',
+          value: '#49cabe',
+          string: '#49caeb',
+        }}
+      />
+    </Container>
+  );
 };
 
 export default Home;

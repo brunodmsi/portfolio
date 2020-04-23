@@ -1,0 +1,29 @@
+{
+  "author": {
+    "name": "Bruno De Masi",
+    "email": "brunodemasi1@gmail.com",
+    "url": "https://demasi.dev",
+    "description": "Just a brazilian dev"
+  },
+  "name": "portfolio",
+  "description": "A portfolio made with ReactJS",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brunodmsi"
+  },
+  "dependencies": {
+    "react": "90%",
+    "express": "100%",
+    "typescript": "80%",
+    "react-router-dom": "100%",
+    "react-navigation": "100%",
+    "react-native": "90%"
+  },
+  "devDependencies": {
+    "coffee": "100%",
+    "music": "The Black Keys",
+    "editor": "VSCode",
+    "code-patterns": "eslint/prettier",
+    "test": "jest"
+  }
+}
