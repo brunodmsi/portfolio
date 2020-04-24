@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import Tooltip from 'little-react-tooltip';
 import {
   FaHome,
   FaCode,
@@ -12,7 +12,6 @@ import {
 } from 'react-icons/fa';
 
 import OutlineItem from '../OutlineItem';
-import Tooltip from '../Tooltip';
 
 import { Wrapper } from './styles';
 
@@ -35,6 +34,7 @@ const SideBar: React.FC = () => {
       <section>
         <Tooltip
           tooltipText="Home"
+          position="right"
           colors={{
             background: '#333',
             font: '#E086D3',
@@ -46,6 +46,7 @@ const SideBar: React.FC = () => {
         </Tooltip>
         <Tooltip
           tooltipText="Projects"
+          position="right"
           colors={{
             background: '#333',
             font: '#E086D3',
@@ -57,6 +58,7 @@ const SideBar: React.FC = () => {
         </Tooltip>
         <Tooltip
           tooltipText="About me"
+          position="right"
           colors={{
             background: '#333',
             font: '#E086D3',
@@ -68,6 +70,7 @@ const SideBar: React.FC = () => {
         </Tooltip>
         <Tooltip
           tooltipText="Contact"
+          position="right"
           colors={{
             background: '#333',
             font: '#E086D3',

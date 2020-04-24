@@ -1,9 +1,9 @@
 import React from 'react';
 import * as Yup from 'yup';
 import { Form, Input, Textarea } from '@rocketseat/unform';
+import PrettyJSON from 'react-prettify-json';
 
 import OutlineItem from '../../components/OutlineItem';
-import PrettyJSON from '../../components/PrettyJSON';
 import contactJSON from '../../json/contact.json';
 
 import { Container, ContactArea } from './styles';

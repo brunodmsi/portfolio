@@ -1559,7 +1559,7 @@
     "@types/history" "*"
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^16.9.0":
+"@types/react@*", "@types/react@^16.9.34":
   version "16.9.34"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.34.tgz#f7d5e331c468f53affed17a8a4d488cd44ea9349"
   integrity sha512-8AJlYMOfPe1KGLKyHpflCg5z46n0b5DbRfqDksxBLBTUpB75ypDBAO9eCUcjNwE6LCUslwTz00yyG/X9gaVtow==
@@ -6602,6 +6602,11 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
+little-react-tooltip@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/little-react-tooltip/-/little-react-tooltip-1.0.1.tgz#950cff8f99f5216e2c2aeb239a27a679ed1e7cbd"
+  integrity sha512-tyyw9UMK4Dz7+OzB0i4gO7ZNhsm0M3ueITNZKVNWZKBhNF3EIaTQ5TjTFX2GU4/HHsXyfj9sqMav7NcfLryFOQ==
+
 load-json-file@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/load-json-file/-/load-json-file-2.0.0.tgz#7947e42149af80d696cbf797bcaabcfe1fe29ca8"
@@ -8855,6 +8860,11 @@ react-is@^16.12.0, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-i
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+
+react-prettify-json@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/react-prettify-json/-/react-prettify-json-1.1.1.tgz#9e16aa32a179b48643466f2f177def7b7237d8bd"
+  integrity sha512-MSP9kfsvR99KWlecKe9C1+fuV8zzpk17xPYtZgMPhkyMorV20Euh8Nz+UqX0JNg/AejPTkfqZRRJLAHAnsNDyg==
 
 react-router-dom@^5.1.2:
   version "5.1.2"

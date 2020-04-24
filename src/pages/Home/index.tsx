@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PrettyJSON from 'react-prettify-json';
 
 import OutlineItem from '../../components/OutlineItem';
-import PrettyJSON from '../../components/PrettyJSON';
 import homeJSON from '../../json/home.json';
 
 import { Container, Introduction } from './styles';

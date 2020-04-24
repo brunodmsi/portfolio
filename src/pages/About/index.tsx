@@ -1,8 +1,6 @@
 import React from 'react';
-import { Form, Input, Textarea } from '@rocketseat/unform';
 
 import OutlineItem from '../../components/OutlineItem';
-import Tooltip from '../../components/Tooltip';
 
 import { Container, ContactArea } from './styles';
 
