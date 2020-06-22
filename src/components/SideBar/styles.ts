@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { shade } from 'polished';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.nav`
   display: flex;
   width: 100px;
   background-color: #181818;
@@ -22,7 +22,7 @@ export const Wrapper = styled.div`
     justify-content: center;
 
     div {
-      padding: 10px;
+      padding: 20px;
       transition: color 0.2s;
       transition: transform 0.2s;
 
@@ -32,10 +32,6 @@ export const Wrapper = styled.div`
         svg {
           color: #49caeb;
         }
-      }
-
-      & + div {
-        margin-top: 10px;
       }
 
       svg {

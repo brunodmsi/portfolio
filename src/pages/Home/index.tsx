@@ -13,7 +13,7 @@ const Home: React.FC = () => {
       <Introduction>
         <code>&lt;/&gt;</code>
 
-        <h1>Hi, I&apos;m</h1>
+        <h1>Hi, &nbsp;I&apos;m</h1>
 
         <OutlineItem
           outline={{ color: '#ec1839' }}

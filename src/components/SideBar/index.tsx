@@ -32,95 +32,97 @@ const SideBar: React.FC = () => {
       </OutlineItem>
 
       <section>
-        <Tooltip
-          tooltipText="Home"
-          position="right"
-          colors={{
-            background: '#333',
-            font: '#E086D3',
-          }}
-        >
-          <Link to="/">
+        <Link to="/">
+          <Tooltip
+            tooltipText="Home"
+            position="right"
+            colors={{
+              background: '#333',
+              font: '#E086D3',
+            }}
+          >
             <FaHome size={28} />
-          </Link>
-        </Tooltip>
-        <Tooltip
-          tooltipText="Projects"
-          position="right"
-          colors={{
-            background: '#333',
-            font: '#E086D3',
-          }}
-        >
-          <Link to="/">
+          </Tooltip>
+        </Link>
+
+        <Link to="/code">
+          <Tooltip
+            tooltipText="Projects"
+            position="right"
+            colors={{
+              background: '#333',
+              font: '#E086D3',
+            }}
+          >
             <FaCode size={28} />
-          </Link>
-        </Tooltip>
-        <Tooltip
-          tooltipText="About me"
-          position="right"
-          colors={{
-            background: '#333',
-            font: '#E086D3',
-          }}
-        >
-          <Link to="/about">
+          </Tooltip>
+        </Link>
+
+        <Link to="/about">
+          <Tooltip
+            tooltipText="About me"
+            position="right"
+            colors={{
+              background: '#333',
+              font: '#E086D3',
+            }}
+          >
             <FaUser size={28} />
-          </Link>
-        </Tooltip>
-        <Tooltip
-          tooltipText="Contact"
-          position="right"
-          colors={{
-            background: '#333',
-            font: '#E086D3',
-          }}
-        >
-          <Link to="/contact">
+          </Tooltip>
+        </Link>
+        <Link to="/contact">
+          <Tooltip
+            tooltipText="Contact"
+            position="right"
+            colors={{
+              background: '#333',
+              font: '#E086D3',
+            }}
+          >
             <FaEnvelope size={28} />
-          </Link>
-        </Tooltip>
+          </Tooltip>
+        </Link>
       </section>
 
       <footer>
-        <Tooltip
-          colors={{
-            background: '#333',
-            font: '#E086D3',
-          }}
-          tooltipText="Github"
-          size="small"
-        >
-          <a href="https://github.com/brunodmsi">
+        <a href="https://github.com/brunodmsi">
+          <Tooltip
+            colors={{
+              background: '#333',
+              font: '#E086D3',
+            }}
+            tooltipText="Github"
+            size="small"
+          >
             <FaGithub size={20} />
-          </a>
-        </Tooltip>
+          </Tooltip>
+        </a>
 
-        <Tooltip
-          colors={{
-            background: '#333',
-            font: '#E086D3',
-          }}
-          tooltipText="Linkedin"
-          size="small"
-        >
-          <a href="https://linkedin.com/in/brunodemasi">
+        <a href="https://linkedin.com/in/brunodemasi">
+          <Tooltip
+            colors={{
+              background: '#333',
+              font: '#E086D3',
+            }}
+            tooltipText="Linkedin"
+            size="small"
+          >
             <FaLinkedinIn size={20} />
-          </a>
-        </Tooltip>
+          </Tooltip>
+        </a>
 
-        <Tooltip
-          colors={{
-            background: '#333',
-            font: '#E086D3',
-          }}
-          tooltipText="Facebook"
-          size="small"
-        >
-          <a href="https://facebook.com/brunodmsi">
+        <a href="https://facebook.com/brunodmsi">
+          <Tooltip
+            colors={{
+              background: '#333',
+              font: '#E086D3',
+            }}
+            tooltipText="Facebook"
+            size="small"
+          >
             <FaFacebook size={20} />
-          </a>
-        </Tooltip>
+          </Tooltip>
+        </a>
       </footer>
     </Wrapper>
   );
