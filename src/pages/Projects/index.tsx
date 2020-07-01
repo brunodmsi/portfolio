@@ -14,7 +14,7 @@ const Projects: React.FC = () => {
       <Github>
         <header>
           <OutlineItem outline={{ color: '#ec1839' }} textColor="#fff">
-            github projects
+            my projects
           </OutlineItem>
         </header>
       </Github>

@@ -14,10 +14,14 @@ const appearFromLeft = keyframes`
 export const Container = styled.div`
   display: flex;
   width: 100%;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   overflow-x: auto;
 
   animation: ${appearFromLeft} 1s;
+
+  @media (max-width: 1020px) {
+    flex-direction: column;
+  }
 `;
 
 export const Introduction = styled.div`
@@ -69,5 +73,9 @@ export const Introduction = styled.div`
     &:hover {
       background-color: #1d4a57;
     }
+  }
+
+  @media (max-width: 1020px) {
+    margin-bottom: 5rem;
   }
 `;
