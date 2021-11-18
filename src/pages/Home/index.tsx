@@ -24,7 +24,7 @@ const Home: React.FC = () => {
         </OutlineItem>
 
         <h3>Full Stack developer</h3>
-        <span>Working mainly with JavaScript technologies.</span>
+        <span>Status: coding.</span>
 
         <Link to="/contact">Contact me</Link>
       </Introduction>
