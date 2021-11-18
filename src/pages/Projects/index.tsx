@@ -7,7 +7,7 @@ import { Container, ProjectArea } from './styles';
 import buggyImg from '../../assets/buggy.png';
 import diacImg from '../../assets/diac.png';
 import lurisImg from '../../assets/luris.png';
-import spotanalysisImg from '../../assets/spotanalysis.png';
+import softamostraImg from '../../assets/softamostra.png';
 import anatogameImg from '../../assets/anatogame.png';
 import scientImg from '../../assets/scient.png';
 
@@ -23,7 +23,7 @@ const myProjects: MyProjectsType[] = [
     name: 'Buggy',
     imgPath: buggyImg,
     description:
-      'Bug management of your projects. Use a management tool in Kanban format to interact with your team on the adjustments that need to be made',
+      'Buggy offers a great interface for bug management of your projects. Use a management tool in Kanban format to interact with your team on the adjustments that need to be made. Also track bugs on your own apps using our BuggyListener.',
     url: undefined,
   },
   {
@@ -41,17 +41,17 @@ const myProjects: MyProjectsType[] = [
     url: undefined,
   },
   {
-    name: 'Spotanalysis',
-    imgPath: spotanalysisImg,
+    name: 'SoftAmostra',
+    imgPath: softamostraImg,
     description:
-      'Application created directed for the user that listens to music in Spotify. Logging in with you Spotify account, we make an analysis about the musics you listen to, and your playlists, returning your type of mood or taste for music.',
+      'In times of pandemic, digital solutions were needed for face-to-face events. The SoftAmostra portal brings together a Digital Sample of the technological projects of undergraduates in the Bachelor of Computer Science course at CESUPA for "Computação Amostra", which is an event to showcase the projects produced by these students.',
     url: undefined,
   },
   {
     name: 'AnatoGame',
     imgPath: anatogameImg,
     description:
-      'Project directed to students of Medicine. Gamification of the Human Anatomy study, play in a room against other medicine students to score the most points',
+      'Project directed to students of Medicine. Gamification of the Human Anatomy study, play in a room against other medicine students to score the most points. Get to learn more and more about the subjects, and even use it on your free time as a self-study mechanism.',
     url: undefined,
   },
   {

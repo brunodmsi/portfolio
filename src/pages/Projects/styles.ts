@@ -49,13 +49,13 @@ export const ProjectArea = styled.div`
       div.project-header {
         display: flex;
         align-items: center;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
+        height: 20%;
 
         img {
-          max-width: 80px;
-          max-height: 80px;
-          align-self: center;
+          width: 50px;
           margin-right: 20px;
+          object-fit: cover;
         }
       }
 
