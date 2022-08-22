@@ -13,22 +13,25 @@
     "@types/react-dom": "^16.9.0",
     "dotenv": "^8.2.0",
     "little-react-tooltip": "^1.0.1",
-    "polished": "^3.5.2",
+    "polished": "^3.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^3.10.0",
     "react-prettify-json": "^1.1.1",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.0",
     "styled-components": "^5.1.0",
     "typescript": "~3.7.2",
-    "yup": "^0.28.4"
+    "yup": "^0.30.0",
+    "@snyk/protect": "latest"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -61,5 +64,6 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^2.5.0",
     "prettier": "^2.0.5"
-  }
+  },
+  "snyk": true
 }
