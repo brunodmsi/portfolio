@@ -115,6 +115,16 @@ export function getLanguageStats(repos: GitHubRepo[]): LanguageStat[] {
     }));
 }
 
+export async function getTotalCommits(): Promise<number> {
+  const res = await fetch(
+    `https://api.github.com/search/commits?q=author:${GITHUB_USERNAME}`,
+    { headers: ghHeaders(), next: { revalidate: 3600 } }
+  );
+  if (!res.ok) return 0;
+  const data = await res.json();
+  return data.total_count ?? 0;
+}
+
 async function getCommitCount(repo: string): Promise<number> {
   try {
     const res = await fetch(
@@ -141,6 +151,6 @@ export async function getTopRepos(repos: GitHubRepo[]): Promise<GitHubRepo[]> {
   );
   return counts
     .sort((a, b) => b.commits - a.commits)
-    .slice(0, 6)
+    .slice(0, 3)
     .map((c) => c.repo);
 }

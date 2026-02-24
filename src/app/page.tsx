@@ -10,8 +10,6 @@ import {
   MapPin,
   GraduationCap,
   Hexagon,
-  Container,
-  Languages,
   Mail,
   Users,
 } from "lucide-react";
@@ -21,15 +19,17 @@ import {
   getGitHubOrgs,
   getLanguageStats,
   getTopRepos,
+  getTotalCommits,
   LANGUAGE_COLORS,
 } from "../lib/github";
 import { ContactForm } from "../components/contact-form";
 
 export default async function Home() {
-  const [user, repos, orgs] = await Promise.all([
+  const [user, repos, orgs, totalCommits] = await Promise.all([
     getGitHubUser(),
     getGitHubRepos(),
     getGitHubOrgs(),
+    getTotalCommits(),
   ]);
 
   const languageStats = getLanguageStats(repos);
@@ -64,10 +64,10 @@ export default async function Home() {
       "https://twitter.com/brunodmsi",
     ],
     image: user.avatar_url,
-    knowsAbout: ["TypeScript", "Rust", "Web3", "DevOps", "Software Architecture"],
+    knowsAbout: ["TypeScript", "JavaScript", "Rust", "Python", "Web3"],
   };
 
-  const spanPattern = [1, 1, 2, 2, 1, 1];
+  const uniqueLangs = new Set(repos.filter((r) => !r.fork && r.language).map((r) => r.language)).size;
 
   return (
     <>
@@ -98,10 +98,21 @@ export default async function Home() {
             </div>
           </div>
 
-          {/* ── Repos count ── */}
+          {/* ── Stat: Total commits ── */}
           <div
             className="card flex flex-col justify-center animate-fade-up"
             style={{ animationDelay: "60ms" }}
+          >
+            <span className="stat-number font-mono text-3xl font-bold">
+              {totalCommits.toLocaleString()}
+            </span>
+            <span className="mt-1 font-mono text-[10px] text-secondary">commits</span>
+          </div>
+
+          {/* ── Stat: Repos count ── */}
+          <div
+            className="card flex flex-col justify-center animate-fade-up"
+            style={{ animationDelay: "120ms" }}
           >
             <span className="stat-number font-mono text-3xl font-bold">
               {user.public_repos}
@@ -109,27 +120,16 @@ export default async function Home() {
             <span className="mt-1 font-mono text-[10px] text-secondary">repositories</span>
           </div>
 
-          {/* ── Years on GitHub ── */}
-          <div
-            className="card flex flex-col justify-center animate-fade-up"
-            style={{ animationDelay: "120ms" }}
-          >
-            <span className="stat-number font-mono text-3xl font-bold">
-              {yearsSince}
-            </span>
-            <span className="mt-1 font-mono text-[10px] text-secondary">years on github</span>
-          </div>
-
           {/* ── Profile-derived cards ── */}
 
-          {/* Location — from LinkedIn (Belém, Pará, Brazil) */}
+          {/* Location */}
           <div
             className="card flex flex-col items-center justify-center text-center animate-fade-up"
             style={{ animationDelay: "140ms" }}
           >
             <MapPin size={28} className="text-accent/40" strokeWidth={1.5} />
             <span className="mt-3 block text-sm font-medium text-primary">
-              Belém, Brazil
+              Brazil
             </span>
           </div>
 
@@ -144,7 +144,7 @@ export default async function Home() {
             </span>
           </div>
 
-          {/* Web3 — from GitHub (3 repos) */}
+          {/* Web3 */}
           {web3Repos.length > 0 && (
             <div
               className="card flex flex-col items-center justify-center text-center animate-fade-up"
@@ -160,16 +160,17 @@ export default async function Home() {
             </div>
           )}
 
-          {/* DevOps — from LinkedIn skills (K8s, Docker, Serverless) */}
+          {/* Languages count */}
           <div
-            className="card flex flex-col items-center justify-center text-center animate-fade-up"
+            className="card flex flex-col justify-center animate-fade-up"
             style={{ animationDelay: "200ms" }}
           >
-            <Container size={28} className="text-accent/40" strokeWidth={1.5} />
-            <span className="mt-3 block text-sm font-medium text-primary">
-              DevOps & Cloud
+            <span className="stat-number font-mono text-3xl font-bold">
+              {uniqueLangs}
             </span>
+            <span className="mt-1 font-mono text-[10px] text-secondary">languages</span>
           </div>
+
 
           {/* ── Languages ── */}
           <div
@@ -289,16 +290,14 @@ export default async function Home() {
             </div>
           )}
 
-          {/* ── Recent Projects ── */}
+          {/* ── Top Projects ── */}
           {recentRepos.map((repo, i) => (
             <a
               key={repo.name}
               href={repo.html_url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`card card-interactive arrow-link animate-fade-up ${
-                spanPattern[i] === 2 ? "col-span-2" : "col-span-1"
-              }`}
+              className="card card-interactive arrow-link animate-fade-up col-span-2 lg:col-span-2"
               style={{ animationDelay: `${340 + i * 60}ms` }}
             >
               <div className="mb-3 flex items-center justify-between">
