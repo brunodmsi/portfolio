@@ -36,8 +36,17 @@ export interface GitHubOrg {
 
 const GITHUB_USERNAME = "brunodmsi";
 
+function ghHeaders(): HeadersInit {
+  const h: HeadersInit = { Accept: "application/vnd.github+json" };
+  if (process.env.GITHUB_TOKEN) {
+    h.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
+  }
+  return h;
+}
+
 export async function getGitHubUser(): Promise<GitHubUser> {
   const res = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}`, {
+    headers: ghHeaders(),
     next: { revalidate: 3600 },
   });
   if (!res.ok) throw new Error("Failed to fetch GitHub user");
@@ -47,7 +56,7 @@ export async function getGitHubUser(): Promise<GitHubUser> {
 export async function getGitHubRepos(): Promise<GitHubRepo[]> {
   const res = await fetch(
     `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=pushed&per_page=100`,
-    { next: { revalidate: 3600 } }
+    { headers: ghHeaders(), next: { revalidate: 3600 } }
   );
   if (!res.ok) throw new Error("Failed to fetch GitHub repos");
   return res.json();
@@ -56,7 +65,7 @@ export async function getGitHubRepos(): Promise<GitHubRepo[]> {
 export async function getGitHubOrgs(): Promise<GitHubOrg[]> {
   const res = await fetch(
     `https://api.github.com/users/${GITHUB_USERNAME}/orgs`,
-    { next: { revalidate: 3600 } }
+    { headers: ghHeaders(), next: { revalidate: 3600 } }
   );
   if (!res.ok) return [];
   return res.json();
@@ -110,7 +119,7 @@ async function getCommitCount(repo: string): Promise<number> {
   try {
     const res = await fetch(
       `https://api.github.com/repos/${GITHUB_USERNAME}/${repo}/commits?per_page=1`,
-      { next: { revalidate: 3600 } }
+      { headers: ghHeaders(), next: { revalidate: 3600 } }
     );
     if (!res.ok) return 0;
     const link = res.headers.get("link");
