@@ -175,19 +175,44 @@ body {
   animation: fade-up 0.6s ease both;
 }
 
+@keyframes skill-fill {
+  from {
+    width: 0%;
+  }
+}
+
 /* ═══════════════════════════════════════════════════════════════
-   LANGUAGE BAR
+   LANGUAGE TOOLTIP
    ═══════════════════════════════════════════════════════════════ */
-.lang-bar-segment {
-  transition: flex-grow 0.5s ease;
+.lang-tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem 0.625rem;
+  padding: 0.75rem 1rem;
+  background: var(--card);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--card-border);
+  border-radius: 0.75rem;
+  font-family: var(--font-geist-mono);
+  font-size: 0.6875rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  min-width: 180px;
+  max-width: 260px;
+  box-shadow: var(--shadow-card);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 20;
 }
 
-.lang-bar-segment:first-child {
-  border-radius: 999px 0 0 999px;
-}
-
-.lang-bar-segment:last-child {
-  border-radius: 0 999px 999px 0;
+.group:hover .lang-tooltip {
+  opacity: 1;
 }
 
 /* ═══════════════════════════════════════════════════════════════

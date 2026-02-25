@@ -115,14 +115,132 @@ export function getLanguageStats(repos: GitHubRepo[]): LanguageStat[] {
     }));
 }
 
+export interface ContributionDay {
+  date: string;
+  contributionCount: number;
+}
+
+export interface ContributionWeek {
+  contributionDays: ContributionDay[];
+}
+
+export interface ContributionData {
+  totalContributions: number;
+  weeks: ContributionWeek[];
+}
+
+export async function getContributions(): Promise<ContributionData> {
+  const to = new Date();
+  const from = new Date();
+  from.setMonth(from.getMonth() - 3);
+
+  const query = `
+    query($username: String!, $from: DateTime!, $to: DateTime!) {
+      user(login: $username) {
+        contributionsCollection(from: $from, to: $to) {
+          contributionCalendar {
+            totalContributions
+            weeks {
+              contributionDays {
+                date
+                contributionCount
+              }
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  const res = await fetch("https://api.github.com/graphql", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+    },
+    body: JSON.stringify({
+      query,
+      variables: {
+        username: GITHUB_USERNAME,
+        from: from.toISOString(),
+        to: to.toISOString(),
+      },
+    }),
+    next: { revalidate: 3600 },
+  });
+
+  if (!res.ok) {
+    return { totalContributions: 0, weeks: [] };
+  }
+
+  const json = await res.json();
+  const calendar =
+    json.data?.user?.contributionsCollection?.contributionCalendar;
+  if (!calendar) {
+    return { totalContributions: 0, weeks: [] };
+  }
+
+  return {
+    totalContributions: calendar.totalContributions,
+    weeks: calendar.weeks,
+  };
+}
+
 export async function getTotalCommits(): Promise<number> {
-  const res = await fetch(
-    `https://api.github.com/search/commits?q=author:${GITHUB_USERNAME}`,
-    { headers: ghHeaders(), next: { revalidate: 3600 } }
-  );
-  if (!res.ok) return 0;
-  const data = await res.json();
-  return data.total_count ?? 0;
+  if (!process.env.GITHUB_TOKEN) {
+    const res = await fetch(
+      `https://api.github.com/search/commits?q=author:${GITHUB_USERNAME}`,
+      { headers: ghHeaders(), next: { revalidate: 3600 } }
+    );
+    if (!res.ok) return 0;
+    const data = await res.json();
+    return data.total_count ?? 0;
+  }
+
+  // Use GraphQL to include private commit contributions across all years
+  const created = 2019; // GitHub account creation year
+  const currentYear = new Date().getFullYear();
+  let total = 0;
+
+  for (let year = created; year <= currentYear; year++) {
+    const from = `${year}-01-01T00:00:00Z`;
+    const to = year === currentYear
+      ? new Date().toISOString()
+      : `${year + 1}-01-01T00:00:00Z`;
+
+    const query = `
+      query($username: String!, $from: DateTime!, $to: DateTime!) {
+        user(login: $username) {
+          contributionsCollection(from: $from, to: $to) {
+            totalCommitContributions
+            restrictedContributionsCount
+          }
+        }
+      }
+    `;
+
+    const res = await fetch("https://api.github.com/graphql", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+      },
+      body: JSON.stringify({
+        query,
+        variables: { username: GITHUB_USERNAME, from, to },
+      }),
+      next: { revalidate: 3600 },
+    });
+
+    if (!res.ok) continue;
+    const json = await res.json();
+    const c = json.data?.user?.contributionsCollection;
+    if (c) {
+      total += (c.totalCommitContributions ?? 0) + (c.restrictedContributionsCount ?? 0);
+    }
+  }
+
+  return total;
 }
 
 async function getCommitCount(repo: string): Promise<number> {
@@ -138,6 +256,68 @@ async function getCommitCount(repo: string): Promise<number> {
     return match ? parseInt(match[1], 10) : 1;
   } catch {
     return 0;
+  }
+}
+
+export async function getAiBio(
+  user: GitHubUser,
+  repos: GitHubRepo[],
+  orgs: GitHubOrg[]
+): Promise<string> {
+  if (!process.env.OPENAI_API_KEY) return user.bio;
+
+  const nonFork = repos.filter((r) => !r.fork);
+  const languages = [
+    ...new Set(nonFork.filter((r) => r.language).map((r) => r.language)),
+  ];
+  const topRepos = nonFork
+    .slice(0, 8)
+    .map(
+      (r) =>
+        `${r.name}${r.language ? ` (${r.language})` : ""}${r.description ? `: ${r.description}` : ""}`
+    )
+    .join("; ");
+  const orgNames = orgs.map((o) => o.login).join(", ");
+
+  const prompt = `Write a 2-sentence bio for a developer portfolio. It should feel personal and confident, not corporate or generic.
+
+Name: ${user.name}
+Current GitHub bio: ${user.bio || "none"}
+Location: ${user.location || "unknown"}
+Public repos: ${user.public_repos}
+Languages: ${languages.join(", ")}
+Organizations: ${orgNames || "none"}
+Notable projects: ${topRepos}
+
+Rules:
+- First sentence: who they are and what they do (role, focus areas)
+- Second sentence: what makes them interesting (specific tech, project types, or approach)
+- Sound human, not like a LinkedIn summary
+- No emojis, no buzzwords like "passionate" or "innovative"
+- Keep it under 30 words total
+- Plain text, no markdown`;
+
+  try {
+    const res = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+      },
+      body: JSON.stringify({
+        model: "gpt-4o-mini",
+        messages: [{ role: "user", content: prompt }],
+        max_tokens: 80,
+        temperature: 0.5,
+      }),
+      next: { revalidate: 86400 },
+    });
+
+    if (!res.ok) return user.bio;
+    const data = await res.json();
+    return data.choices?.[0]?.message?.content?.trim() || user.bio;
+  } catch {
+    return user.bio;
   }
 }
 

@@ -3,7 +3,6 @@ export const dynamic = "force-dynamic";
 import Image from "next/image";
 import {
   Github,
-  Globe,
   Linkedin,
   Twitter,
   ArrowUpRight,
@@ -12,28 +11,35 @@ import {
   Hexagon,
   Mail,
   Users,
+  Plane,
 } from "lucide-react";
 import {
   getGitHubUser,
   getGitHubRepos,
   getGitHubOrgs,
-  getLanguageStats,
   getTopRepos,
   getTotalCommits,
+  getContributions,
+  getAiBio,
   LANGUAGE_COLORS,
 } from "../lib/github";
 import { ContactForm } from "../components/contact-form";
+import { ContributionHeatmap } from "../components/contribution-heatmap";
+import { ProjectCard } from "../components/project-card";
 
 export default async function Home() {
-  const [user, repos, orgs, totalCommits] = await Promise.all([
+  const [user, repos, orgs, totalCommits, contributions] = await Promise.all([
     getGitHubUser(),
     getGitHubRepos(),
     getGitHubOrgs(),
     getTotalCommits(),
+    getContributions(),
   ]);
 
-  const languageStats = getLanguageStats(repos);
-  const recentRepos = await getTopRepos(repos);
+  const [recentRepos, aiBio] = await Promise.all([
+    getTopRepos(repos),
+    getAiBio(user, repos, orgs),
+  ]);
   const yearsSince =
     new Date().getFullYear() - new Date(user.created_at).getFullYear();
 
@@ -94,7 +100,7 @@ export default async function Home() {
               <h1 className="text-xl font-semibold tracking-tight text-primary">
                 {user.name}
               </h1>
-              <p className="mt-0.5 text-sm text-secondary">{user.bio}</p>
+              <p className="mt-0.5 text-sm text-secondary">{aiBio}</p>
             </div>
           </div>
 
@@ -160,106 +166,29 @@ export default async function Home() {
             </div>
           )}
 
-          {/* Languages count */}
+          {/* Languages count + tooltip */}
           <div
-            className="card flex flex-col justify-center animate-fade-up"
+            className="group card flex flex-col justify-center animate-fade-up overflow-visible"
             style={{ animationDelay: "200ms" }}
           >
             <span className="stat-number font-mono text-3xl font-bold">
               {uniqueLangs}
             </span>
             <span className="mt-1 font-mono text-[10px] text-secondary">languages</span>
-          </div>
-
-
-          {/* ── Languages ── */}
-          <div
-            className="card col-span-2 lg:col-span-3 animate-fade-up"
-            style={{ animationDelay: "240ms" }}
-          >
-            <div className="mb-5 flex h-2.5 overflow-hidden rounded-full bg-[#111]">
-              {languageStats.map((stat) => (
-                <div
-                  key={stat.language}
-                  className="lang-bar-segment"
-                  style={{
-                    flexGrow: stat.percentage,
-                    backgroundColor: stat.color,
-                  }}
-                />
-              ))}
+            <div className="lang-tooltip">
+              {[...new Set(repos.filter((r) => !r.fork && r.language).map((r) => r.language!))]
+                .sort((a, b) => a.localeCompare(b))
+                .map((lang) => (
+                  <span key={lang}>{lang}</span>
+                ))}
             </div>
-            <div className="flex flex-wrap gap-x-5 gap-y-2">
-              {languageStats.slice(0, 8).map((stat) => (
-                <div key={stat.language} className="flex items-center gap-2">
-                  <span
-                    className="inline-block h-2.5 w-2.5 rounded-full"
-                    style={{ backgroundColor: stat.color }}
-                  />
-                  <span className="text-xs text-secondary">{stat.language}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* ── Links ── */}
-          <div
-            className="card col-span-2 lg:col-span-1 flex flex-col justify-center gap-3 animate-fade-up"
-            style={{ animationDelay: "280ms" }}
-          >
-            <a
-              href={user.html_url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="arrow-link flex items-center gap-2.5 text-sm text-secondary transition-colors hover:text-accent"
-            >
-              <Github size={18} />
-              <span className="flex-1">GitHub</span>
-              <ArrowUpRight size={14} className="arrow" />
-            </a>
-            <a
-              href="https://linkedin.com/in/brunodemasi"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="arrow-link flex items-center gap-2.5 text-sm text-secondary transition-colors hover:text-accent"
-            >
-              <Linkedin size={18} />
-              <span className="flex-1">LinkedIn</span>
-              <ArrowUpRight size={14} className="arrow" />
-            </a>
-            <a
-              href="https://twitter.com/brunodmsi"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="arrow-link flex items-center gap-2.5 text-sm text-secondary transition-colors hover:text-accent"
-            >
-              <Twitter size={18} />
-              <span className="flex-1">Twitter</span>
-              <ArrowUpRight size={14} className="arrow" />
-            </a>
-            {user.blog && (
-              <a
-                href={
-                  user.blog.startsWith("http")
-                    ? user.blog
-                    : `https://${user.blog}`
-                }
-                target="_blank"
-                rel="noopener noreferrer"
-                className="arrow-link flex items-center gap-2.5 text-sm text-secondary transition-colors hover:text-accent"
-              >
-                <Globe size={18} />
-                <span className="flex-1">Website</span>
-                <ArrowUpRight size={14} className="arrow" />
-              </a>
-            )}
           </div>
 
           {/* ── GitHub Orgs ── */}
           {orgs.length > 0 && (
             <div
               className="card col-span-2 lg:col-span-4 animate-fade-up"
-              style={{ animationDelay: "310ms" }}
+              style={{ animationDelay: "240ms" }}
             >
               <div className="mb-4 flex items-center gap-2.5">
                 <Users size={16} className="text-accent/40" />
@@ -292,44 +221,89 @@ export default async function Home() {
 
           {/* ── Top Projects ── */}
           {recentRepos.map((repo, i) => (
-            <a
+            <ProjectCard
               key={repo.name}
-              href={repo.html_url}
+              name={repo.name}
+              url={repo.html_url}
+              language={repo.language}
+              languageColor={LANGUAGE_COLORS[repo.language || ""] || "#555"}
+              description={repo.description}
+              animationDelay={`${280 + i * 60}ms`}
+            />
+          ))}
+
+          {/* ── Flight Tracker ── */}
+          <a
+            href="https://iastravel.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="card card-interactive arrow-link animate-fade-up col-span-2 lg:col-span-2"
+            style={{ animationDelay: `${280 + recentRepos.length * 60}ms` }}
+          >
+            <div className="mb-3 flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <Plane size={14} className="text-accent/40" />
+                <span className="text-[11px] text-secondary">Travel</span>
+              </div>
+              <ArrowUpRight size={14} className="arrow" />
+            </div>
+            <h3 className="font-medium tracking-tight text-primary">
+              Flight Tracker
+            </h3>
+            <p className="mt-1.5 line-clamp-2 text-xs leading-relaxed text-secondary">
+              Real-time flight tracking and travel planning tool
+            </p>
+          </a>
+
+          {/* ── Contribution Heatmap ── */}
+          <div
+            className="card col-span-2 lg:col-span-3 animate-fade-up overflow-visible"
+            style={{ animationDelay: `${340 + recentRepos.length * 60}ms` }}
+          >
+            <ContributionHeatmap data={contributions} />
+          </div>
+
+          {/* ── Links ── */}
+          <div
+            className="card col-span-2 lg:col-span-1 flex flex-col justify-center gap-3 animate-fade-up"
+            style={{ animationDelay: `${400 + recentRepos.length * 60}ms` }}
+          >
+            <a
+              href={user.html_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="card card-interactive arrow-link animate-fade-up col-span-2 lg:col-span-2"
-              style={{ animationDelay: `${340 + i * 60}ms` }}
+              className="arrow-link flex items-center gap-2.5 text-sm text-secondary transition-colors hover:text-accent"
             >
-              <div className="mb-3 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <span
-                    className="inline-block h-2 w-2 rounded-full"
-                    style={{
-                      backgroundColor:
-                        LANGUAGE_COLORS[repo.language || ""] || "#555",
-                    }}
-                  />
-                  <span className="text-[11px] text-secondary">
-                    {repo.language}
-                  </span>
-                </div>
-                <ArrowUpRight size={14} className="arrow" />
-              </div>
-              <h3 className="font-medium tracking-tight text-primary">
-                {repo.name}
-              </h3>
-              {repo.description && (
-                <p className="mt-1.5 line-clamp-2 text-xs leading-relaxed text-secondary">
-                  {repo.description}
-                </p>
-              )}
+              <Github size={18} />
+              <span className="flex-1">GitHub</span>
+              <ArrowUpRight size={14} className="arrow" />
             </a>
-          ))}
+            <a
+              href="https://linkedin.com/in/brunodemasi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="arrow-link flex items-center gap-2.5 text-sm text-secondary transition-colors hover:text-accent"
+            >
+              <Linkedin size={18} />
+              <span className="flex-1">LinkedIn</span>
+              <ArrowUpRight size={14} className="arrow" />
+            </a>
+            <a
+              href="https://twitter.com/brunodmsi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="arrow-link flex items-center gap-2.5 text-sm text-secondary transition-colors hover:text-accent"
+            >
+              <Twitter size={18} />
+              <span className="flex-1">Twitter</span>
+              <ArrowUpRight size={14} className="arrow" />
+            </a>
+          </div>
 
           {/* ── Contact Form ── */}
           <div
             className="card col-span-2 lg:col-span-4 animate-fade-up"
-            style={{ animationDelay: "700ms" }}
+            style={{ animationDelay: `${520 + recentRepos.length * 60}ms` }}
           >
             <div className="mb-5 flex items-center gap-2.5">
               <Mail size={18} className="text-accent/40" />
