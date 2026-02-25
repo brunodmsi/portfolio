@@ -22,6 +22,17 @@ export async function sendContactEmail(
     return { success: false, error: "Email and message are required." };
   }
 
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email) || email.length > 254) {
+    return { success: false, error: "Invalid email address." };
+  }
+  if (message.length > 5000) {
+    return { success: false, error: "Message too long." };
+  }
+  if (name && name.length > 100) {
+    return { success: false, error: "Name too long." };
+  }
+
   if (!token) {
     return { success: false, error: "Please complete the captcha." };
   }
@@ -46,7 +57,7 @@ export async function sendContactEmail(
 
   // Send email via Resend
   const { error } = await resend.emails.send({
-    from: "Portfolio <onboarding@resend.dev>",
+    from: "Portfolio <portfolio@demasi.dev>",
     to: "bruno@demasi.dev",
     subject: `Portfolio contact from ${name || "Anonymous"}`,
     replyTo: email,
