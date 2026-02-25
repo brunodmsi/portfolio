@@ -48,7 +48,7 @@ export function ContactForm() {
         {process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && (
           <Turnstile
             siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
-            options={{ theme: "dark", size: "compact" }}
+            options={{ theme: "dark", size: "invisible" }}
           />
         )}
 
