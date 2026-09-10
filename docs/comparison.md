@@ -1,6 +1,8 @@
 # Comparação das três experiências
 
-O usuário autorizou implementar as três direções em worktrees próprias e escolher depois. Em 10 de setembro de 2026, preferiu **Sinapse líquida**, com a marca `bdm.` de Abisso no cabeçalho. Essa mudança pontual está na worktree Sinapse; não importa o restante da direção Abisso. O aplicativo original permanece na branch `main`; os experimentos preexistentes em `previews/` não fazem parte destas implementações.
+O usuário autorizou implementar as três direções em worktrees próprias e escolher depois. Em 10 de setembro de 2026, preferiu **Sinapse líquida**, com a marca `bdm.` de Abisso no cabeçalho. Depois aprovou O Condutor e suas faíscas colecionáveis, solicitando levar essa versão à `main`. Abisso e Membrana permanecem em suas branches; o aplicativo original está preservado no histórico do Git. Os experimentos preexistentes em `previews/` continuam locais e não fazem parte da entrega.
+
+Este documento registra a comparação inicial, anterior ao jogo. A implementação escolhida e os testes posteriores estão no [README](../README.md), na [verificação do Condutor](condutor-verification.md) e na [verificação das faíscas](sparks-verification.md); os resultados históricos abaixo não são uma nova medição da versão enviada à `main`.
 
 | Direção | Identidade | Worktree / branch | Preview |
 | --- | --- | --- | --- |

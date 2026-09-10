@@ -1,0 +1,531 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-09T21:05:54Z",
+  "title": "Design System: Bruno De Masi — Sinapse líquida",
+  "extensions": {
+    "colorMeta": {
+      "background": {
+        "role": "neutral",
+        "displayName": "Graphite Ground",
+        "tonalRamp": [
+          "oklch(15% 0.00000 0.00)",
+          "oklch(25% 0.00000 0.00)",
+          "oklch(35% 0.00000 0.00)",
+          "oklch(45% 0.00000 0.00)",
+          "oklch(55% 0.00000 0.00)",
+          "oklch(65% 0.00000 0.00)",
+          "oklch(80% 0.00000 0.00)",
+          "oklch(95% 0.00000 0.00)"
+        ]
+      },
+      "foreground": {
+        "role": "neutral",
+        "displayName": "Pale Silver",
+        "tonalRamp": [
+          "oklch(15% 0.01141 128.59)",
+          "oklch(25% 0.01141 128.59)",
+          "oklch(35% 0.01141 128.59)",
+          "oklch(45% 0.01141 128.59)",
+          "oklch(55% 0.01141 128.59)",
+          "oklch(65% 0.01141 128.59)",
+          "oklch(80% 0.01141 128.59)",
+          "oklch(95% 0.01141 128.59)"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Phosphor Green",
+        "tonalRamp": [
+          "oklch(15% 0.19201 149.58)",
+          "oklch(25% 0.19201 149.58)",
+          "oklch(35% 0.19201 149.58)",
+          "oklch(45% 0.19201 149.58)",
+          "oklch(55% 0.19201 149.58)",
+          "oklch(65% 0.19201 149.58)",
+          "oklch(80% 0.19201 149.58)",
+          "oklch(95% 0.19201 149.58)"
+        ]
+      },
+      "headline-tint": {
+        "role": "primary",
+        "displayName": "Soft Phosphor",
+        "tonalRamp": [
+          "oklch(15% 0.06858 157.83)",
+          "oklch(25% 0.06858 157.83)",
+          "oklch(35% 0.06858 157.83)",
+          "oklch(45% 0.06858 157.83)",
+          "oklch(55% 0.06858 157.83)",
+          "oklch(65% 0.06858 157.83)",
+          "oklch(80% 0.06858 157.83)",
+          "oklch(95% 0.06858 157.83)"
+        ]
+      },
+      "name-outline": {
+        "role": "neutral",
+        "displayName": "Silver Outline",
+        "tonalRamp": [
+          "oklch(15% 0.02498 156.70)",
+          "oklch(25% 0.02498 156.70)",
+          "oklch(35% 0.02498 156.70)",
+          "oklch(45% 0.02498 156.70)",
+          "oklch(55% 0.02498 156.70)",
+          "oklch(65% 0.02498 156.70)",
+          "oklch(80% 0.02498 156.70)",
+          "oklch(95% 0.02498 156.70)"
+        ]
+      },
+      "focus": {
+        "role": "primary",
+        "displayName": "Focus Light",
+        "tonalRamp": [
+          "oklch(15% 0.12688 157.23)",
+          "oklch(25% 0.12688 157.23)",
+          "oklch(35% 0.12688 157.23)",
+          "oklch(45% 0.12688 157.23)",
+          "oklch(55% 0.12688 157.23)",
+          "oklch(65% 0.12688 157.23)",
+          "oklch(80% 0.12688 157.23)",
+          "oklch(95% 0.12688 157.23)"
+        ]
+      },
+      "link-hover": {
+        "role": "primary",
+        "displayName": "Link Light",
+        "tonalRamp": [
+          "oklch(15% 0.13419 153.95)",
+          "oklch(25% 0.13419 153.95)",
+          "oklch(35% 0.13419 153.95)",
+          "oklch(45% 0.13419 153.95)",
+          "oklch(55% 0.13419 153.95)",
+          "oklch(65% 0.13419 153.95)",
+          "oklch(80% 0.13419 153.95)",
+          "oklch(95% 0.13419 153.95)"
+        ]
+      },
+      "project-rule": {
+        "role": "neutral",
+        "displayName": "Moss Rule",
+        "tonalRamp": [
+          "oklch(15% 0.04411 155.96)",
+          "oklch(25% 0.04411 155.96)",
+          "oklch(35% 0.04411 155.96)",
+          "oklch(45% 0.04411 155.96)",
+          "oklch(55% 0.04411 155.96)",
+          "oklch(65% 0.04411 155.96)",
+          "oklch(80% 0.04411 155.96)",
+          "oklch(95% 0.04411 155.96)"
+        ]
+      },
+      "project-label": {
+        "role": "neutral",
+        "displayName": "Technical Sage",
+        "tonalRamp": [
+          "oklch(15% 0.04812 156.72)",
+          "oklch(25% 0.04812 156.72)",
+          "oklch(35% 0.04812 156.72)",
+          "oklch(45% 0.04812 156.72)",
+          "oklch(55% 0.04812 156.72)",
+          "oklch(65% 0.04812 156.72)",
+          "oklch(80% 0.04812 156.72)",
+          "oklch(95% 0.04812 156.72)"
+        ]
+      },
+      "project-body": {
+        "role": "neutral",
+        "displayName": "Body Sage",
+        "tonalRamp": [
+          "oklch(15% 0.02407 157.47)",
+          "oklch(25% 0.02407 157.47)",
+          "oklch(35% 0.02407 157.47)",
+          "oklch(45% 0.02407 157.47)",
+          "oklch(55% 0.02407 157.47)",
+          "oklch(65% 0.02407 157.47)",
+          "oklch(80% 0.02407 157.47)",
+          "oklch(95% 0.02407 157.47)"
+        ]
+      },
+      "motion-text": {
+        "role": "neutral",
+        "displayName": "Quiet Control",
+        "tonalRamp": [
+          "oklch(15% 0.03071 157.76)",
+          "oklch(25% 0.03071 157.76)",
+          "oklch(35% 0.03071 157.76)",
+          "oklch(45% 0.03071 157.76)",
+          "oklch(55% 0.03071 157.76)",
+          "oklch(65% 0.03071 157.76)",
+          "oklch(80% 0.03071 157.76)",
+          "oklch(95% 0.03071 157.76)"
+        ]
+      },
+      "node-silver": {
+        "role": "neutral",
+        "displayName": "Silver Node",
+        "tonalRamp": [
+          "oklch(15% 0.05969 165.02)",
+          "oklch(25% 0.05969 165.02)",
+          "oklch(35% 0.05969 165.02)",
+          "oklch(45% 0.05969 165.02)",
+          "oklch(55% 0.05969 165.02)",
+          "oklch(65% 0.05969 165.02)",
+          "oklch(80% 0.05969 165.02)",
+          "oklch(95% 0.05969 165.02)"
+        ]
+      },
+      "node-phosphor": {
+        "role": "primary",
+        "displayName": "Phosphor Node",
+        "tonalRamp": [
+          "oklch(15% 0.17185 152.34)",
+          "oklch(25% 0.17185 152.34)",
+          "oklch(35% 0.17185 152.34)",
+          "oklch(45% 0.17185 152.34)",
+          "oklch(55% 0.17185 152.34)",
+          "oklch(65% 0.17185 152.34)",
+          "oklch(80% 0.17185 152.34)",
+          "oklch(95% 0.17185 152.34)"
+        ]
+      },
+      "node-cobalt": {
+        "role": "secondary",
+        "displayName": "Refracted Cobalt",
+        "tonalRamp": [
+          "oklch(15% 0.07052 244.97)",
+          "oklch(25% 0.07052 244.97)",
+          "oklch(35% 0.07052 244.97)",
+          "oklch(45% 0.07052 244.97)",
+          "oklch(55% 0.07052 244.97)",
+          "oklch(65% 0.07052 244.97)",
+          "oklch(80% 0.07052 244.97)",
+          "oklch(95% 0.07052 244.97)"
+        ]
+      },
+      "node-pearl": {
+        "role": "neutral",
+        "displayName": "Pearl Node",
+        "tonalRamp": [
+          "oklch(15% 0.03278 149.54)",
+          "oklch(25% 0.03278 149.54)",
+          "oklch(35% 0.03278 149.54)",
+          "oklch(45% 0.03278 149.54)",
+          "oklch(55% 0.03278 149.54)",
+          "oklch(65% 0.03278 149.54)",
+          "oklch(80% 0.03278 149.54)",
+          "oklch(95% 0.03278 149.54)"
+        ]
+      },
+      "material-silver": {
+        "role": "neutral",
+        "displayName": "Silver Material",
+        "tonalRamp": [
+          "oklch(15% 0.03119 167.23)",
+          "oklch(25% 0.03119 167.23)",
+          "oklch(35% 0.03119 167.23)",
+          "oklch(45% 0.03119 167.23)",
+          "oklch(55% 0.03119 167.23)",
+          "oklch(65% 0.03119 167.23)",
+          "oklch(80% 0.03119 167.23)",
+          "oklch(95% 0.03119 167.23)"
+        ]
+      },
+      "material-phosphor": {
+        "role": "primary",
+        "displayName": "Phosphor Material",
+        "tonalRamp": [
+          "oklch(15% 0.18159 149.98)",
+          "oklch(25% 0.18159 149.98)",
+          "oklch(35% 0.18159 149.98)",
+          "oklch(45% 0.18159 149.98)",
+          "oklch(55% 0.18159 149.98)",
+          "oklch(65% 0.18159 149.98)",
+          "oklch(80% 0.18159 149.98)",
+          "oklch(95% 0.18159 149.98)"
+        ]
+      },
+      "material-cobalt": {
+        "role": "secondary",
+        "displayName": "Cobalt Material",
+        "tonalRamp": [
+          "oklch(15% 0.09865 247.41)",
+          "oklch(25% 0.09865 247.41)",
+          "oklch(35% 0.09865 247.41)",
+          "oklch(45% 0.09865 247.41)",
+          "oklch(55% 0.09865 247.41)",
+          "oklch(65% 0.09865 247.41)",
+          "oklch(80% 0.09865 247.41)",
+          "oklch(95% 0.09865 247.41)"
+        ]
+      },
+      "material-pearl": {
+        "role": "neutral",
+        "displayName": "Pearl Material",
+        "tonalRamp": [
+          "oklch(15% 0.03143 168.26)",
+          "oklch(25% 0.03143 168.26)",
+          "oklch(35% 0.03143 168.26)",
+          "oklch(45% 0.03143 168.26)",
+          "oklch(55% 0.03143 168.26)",
+          "oklch(65% 0.03143 168.26)",
+          "oklch(80% 0.03143 168.26)",
+          "oklch(95% 0.03143 168.26)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Monumental name",
+        "purpose": "Solid first line of the name. Explicit width and weight variation axes govern the drawn form."
+      },
+      "display-outline": {
+        "displayName": "Outlined surname",
+        "purpose": "Relative to the parent display size; the source stroke remains a component-level extension."
+      },
+      "headline": {
+        "displayName": "Chapter headline",
+        "purpose": "About, work and languages headings; the second line is soft green."
+      },
+      "title": {
+        "displayName": "Project title",
+        "purpose": "Project-name button within its heading."
+      },
+      "body": {
+        "displayName": "Project description",
+        "purpose": "Verified short project copy; 47ch maximum on desktop."
+      },
+      "biography": {
+        "displayName": "Biography",
+        "purpose": "The actual English biography, set to a 35ch measure on desktop."
+      },
+      "label": {
+        "displayName": "Technical category",
+        "purpose": "Geist Mono project categories in entries and the detail view; this is not the font of every small control."
+      },
+      "control": {
+        "displayName": "Editorial control",
+        "purpose": "Desktop navigation, journey and text links."
+      },
+      "motion-control": {
+        "displayName": "Motion state",
+        "purpose": "Motion on, Motion off and Retry motion text."
+      },
+      "detail-title": {
+        "displayName": "Detail heading",
+        "purpose": "Selected project name, allowing long names to wrap anywhere."
+      },
+      "detail-body": {
+        "displayName": "Detail description",
+        "purpose": "Existing project description with a 40ch maximum measure."
+      },
+      "portal-display": {
+        "displayName": "Closing display",
+        "purpose": "Get in touch heading with its own solid/outline scale."
+      },
+      "contact": {
+        "displayName": "Contact address",
+        "purpose": "Prominent real mailto destination."
+      },
+      "language": {
+        "displayName": "Language name",
+        "purpose": "Native toggle labels around the compositional orbits."
+      }
+    },
+    "shadows": [
+      {
+        "name": "viewport-edge-light",
+        "value": "inset 1px 0 0 #225b483b, inset -1px 0 0 #749dd22e",
+        "purpose": "The only CSS box-shadow; a line on the viewport sides, not a lifted content surface."
+      }
+    ],
+    "motion": [
+      {
+        "name": "navigation-underline",
+        "value": "transform .3s ease",
+        "purpose": "One-pixel underline grows from its left edge on hover or current location."
+      },
+      {
+        "name": "journey-circle",
+        "value": "background .25s ease, border-color .25s ease",
+        "purpose": "The circular down-arrow responds to hover."
+      },
+      {
+        "name": "outward-arrow",
+        "value": "transform .3s ease",
+        "purpose": "Project and contact arrows translate by 4px horizontally and -4px vertically on hover."
+      },
+      {
+        "name": "language-color",
+        "value": "color .25s ease",
+        "purpose": "Language label hover and selected-state color."
+      },
+      {
+        "name": "depth-ring",
+        "value": "transform .65s cubic-bezier(.16,1,.3,1)",
+        "purpose": "The current chapter marker moves by 23px per chapter."
+      },
+      {
+        "name": "connecting-strands",
+        "value": "1s cubic-bezier(.16,1,.3,1) infinite alternate",
+        "purpose": "Three loading strands scale between .2 and 1; their delays are 0s, -.3s and -.7s."
+      },
+      {
+        "name": "conducting-pulse-outward",
+        "value": "0–3.1s",
+        "purpose": "The shader's smooth outward pulse travels at .34 UV units per second."
+      },
+      {
+        "name": "conducting-pulse-return",
+        "value": "3.1–7.8s",
+        "purpose": "The dimmer returning shader pulse travels at .22 UV units per second."
+      },
+      {
+        "name": "still-edition",
+        "value": "animation: none; transition: none; scroll-behavior: auto",
+        "purpose": "Effective static mode disables animated presentation while preserving HTML and authored SVG."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact-layout-max",
+        "value": "360px"
+      },
+      {
+        "name": "mobile-layout-max",
+        "value": "600px"
+      },
+      {
+        "name": "camera-mobile-below",
+        "value": "650px"
+      },
+      {
+        "name": "desktop-promotion-min",
+        "value": "700px"
+      },
+      {
+        "name": "intermediate-layout-max",
+        "value": "900px"
+      },
+      {
+        "name": "wide-layout-min",
+        "value": "1700px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Identity and chapter navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "The user-selected bdm. wordmark from Abisso, with Sinapse desktop chapter links and mobile rail. The specimen contains its position within a bounded frame; container queries substitute for the page viewport.",
+      "html": "<div class=\"ds-nav-frame\"><header class=\"ds-nav-header\"><a class=\"ds-identity\" href=\"#surface\" aria-label=\"bdm. — Bruno De Masi, back to surface\">bdm<span aria-hidden=\"true\">.</span></a><nav class=\"ds-desktop-nav\" aria-label=\"Main navigation\"><a class=\"ds-nav-link\" href=\"#current\">About</a><a class=\"ds-nav-link\" href=\"#reef\" aria-current=\"location\">Work</a><a class=\"ds-nav-link\" href=\"#spectrum\">Languages</a><a class=\"ds-nav-link\" href=\"#portal\">Contact</a></nav></header><nav class=\"ds-mobile-nav\" aria-label=\"Mobile navigation\"><a class=\"ds-mobile-link\" href=\"#current\">About</a><a class=\"ds-mobile-link\" href=\"#reef\" aria-current=\"location\">Work</a><a class=\"ds-mobile-link\" href=\"#spectrum\">Languages</a><a class=\"ds-mobile-link\" href=\"#portal\">Contact</a></nav></div>",
+      "css": ".ds-nav-frame{container-type:inline-size;background:var(--background, #050505);color:var(--foreground, #edf1e9);font-family:var(--font-archivo, \"Archivo\"), sans-serif}.ds-nav-header{display:flex;align-items:center;justify-content:space-between;height:106px;padding:0 5.2cqw}.ds-identity{display:inline-block;color:inherit;text-decoration:none;font-size:28px;font-weight:650;letter-spacing:-.04em;line-height:1;padding:12px 0;white-space:nowrap}.ds-identity span{color:#97e8c4}.ds-desktop-nav{display:flex;align-items:center;gap:32px;margin-left:3cqw;font-size:13px}.ds-nav-link{position:relative;padding:12px 0;color:inherit;text-decoration:none;touch-action:manipulation}.ds-nav-link::after{content:\"\";position:absolute;bottom:6px;left:0;height:1px;width:100%;background:var(--accent, #22c55e);transform:scaleX(0);transform-origin:left;transition:transform .3s}.ds-nav-link:hover::after,.ds-nav-link[aria-current]::after{transform:scaleX(1)}.ds-mobile-nav{display:none}.ds-identity:focus-visible{outline:2px solid #91f7bc;outline-offset:7px}.ds-nav-link:focus-visible{outline:2px solid #91f7bc;outline-offset:7px}.ds-mobile-link:focus-visible{outline:2px solid #91f7bc;outline-offset:7px}@container(max-width:900px){.ds-nav-header{height:90px}.ds-desktop-nav{gap:20px;font-size:12px}}@container(max-width:600px){.ds-nav-header{height:81px;padding:0 6cqw}.ds-identity{font-size:27px}.ds-desktop-nav{display:none}.ds-mobile-nav{display:flex;align-items:center;justify-content:space-between;padding:7px 6cqw calc(7px + env(safe-area-inset-bottom));background:#080e0bfa;border-top:1px solid #2a4131}.ds-mobile-link{display:grid;place-items:center;min-height:45px;min-width:52px;color:inherit;text-decoration:none;font-size:11px;touch-action:manipulation}.ds-mobile-link[aria-current]{color:#98f2b9;text-decoration:underline;text-underline-offset:6px}}@media(prefers-reduced-motion:reduce){.ds-nav-link::after{transition:none}}"
+    },
+    {
+      "name": "Motion control",
+      "kind": "button",
+      "refersTo": "motion-control",
+      "description": "The actual text-and-icon control. This specimen shows Motion on; the application substitutes Motion off or Retry motion and its play icon according to effective state.",
+      "html": "<button type=\"button\" class=\"ds-motion\" aria-label=\"Motion on — pause animation\" aria-pressed=\"true\"><svg width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"14\" y=\"3\" width=\"5\" height=\"18\" rx=\"1\"/><rect x=\"5\" y=\"3\" width=\"5\" height=\"18\" rx=\"1\"/></svg><span>Motion on</span></button>",
+      "css": ".ds-motion{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0;border:0;background:none;color:#b5cbbd;font-family:var(--font-archivo, \"Archivo\"), sans-serif;font-size:11px;font-weight:400;line-height:1.5;cursor:pointer;touch-action:manipulation}.ds-motion:hover{color:#f1fff5}.ds-motion:focus-visible{outline:2px solid #91f7bc;outline-offset:7px}@media(max-width:600px){.ds-motion{font-size:10px}}"
+    },
+    {
+      "name": "Journey link",
+      "kind": "custom",
+      "refersTo": "journey-link",
+      "description": "Scroll to connect, with the existing circular down-arrow and its hover fill.",
+      "html": "<a class=\"ds-journey\" href=\"#current\"><span class=\"ds-journey-circle\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 5v14\"/><path d=\"m19 12-7 7-7-7\"/></svg></span><span>Scroll to connect</span></a>",
+      "css": ".ds-journey{display:inline-flex;align-items:center;gap:16px;font-family:var(--font-archivo, \"Archivo\"), sans-serif;font-size:13px;line-height:1.5;color:var(--foreground, #edf1e9);text-decoration:none;touch-action:manipulation}.ds-journey-circle{display:grid;place-items:center;width:48px;height:48px;border:1px solid #496354;border-radius:50%;transition:background .25s,border-color .25s}.ds-journey:hover .ds-journey-circle{background:#123322;border-color:#a7e6c0}.ds-journey:focus-visible{outline:2px solid #91f7bc;outline-offset:7px}@media(max-width:600px){.ds-journey{gap:12px;font-size:12px}.ds-journey-circle{width:40px;height:40px}}@media(prefers-reduced-motion:reduce){.ds-journey-circle{transition:none}}"
+    },
+    {
+      "name": "Editorial text link",
+      "kind": "custom",
+      "refersTo": "text-link",
+      "description": "The existing Follow the work link, with a fine bottom rule and a separated down-arrow.",
+      "html": "<a class=\"ds-text-link\" href=\"#reef\">Follow the work <svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 5v14\"/><path d=\"m19 12-7 7-7-7\"/></svg></a>",
+      "css": ".ds-text-link{display:inline-flex;align-items:center;gap:18px;padding:10px 0;border-bottom:1px solid #3d5e49;color:var(--foreground, #edf1e9);font-family:var(--font-archivo, \"Archivo\"), sans-serif;font-size:13px;line-height:1.5;text-decoration:none;touch-action:manipulation}.ds-text-link:hover{color:#8af3af}.ds-text-link:focus-visible{outline:2px solid #91f7bc;outline-offset:7px}"
+    },
+    {
+      "name": "Project connection",
+      "kind": "custom",
+      "refersTo": "project-connection",
+      "description": "Buggy's actual open object, inspect button, monospace category, title button, description and external destination. The SVG reproduces its existing eighteen-ellipse static counterpart.",
+      "html": "<article class=\"ds-project\" aria-labelledby=\"ds-project-buggy\"><button type=\"button\" class=\"ds-project-node\" aria-label=\"Inspect Buggy\" aria-haspopup=\"dialog\"><svg class=\"ds-project-static-node\" viewBox=\"0 0 240 240\" fill=\"none\" aria-hidden=\"true\"><ellipse cx=\"120\" cy=\"120\" rx=\"70\" ry=\"68\" transform=\"rotate(0 120 120)\" stroke=\"currentColor\" opacity=\"0.25\"/><ellipse cx=\"120\" cy=\"120\" rx=\"68.1\" ry=\"68\" transform=\"rotate(10 120 120)\" stroke=\"currentColor\" opacity=\"0.28\"/><ellipse cx=\"120\" cy=\"120\" rx=\"66.2\" ry=\"68\" transform=\"rotate(20 120 120)\" stroke=\"currentColor\" opacity=\"0.31\"/><ellipse cx=\"120\" cy=\"120\" rx=\"64.3\" ry=\"68\" transform=\"rotate(30 120 120)\" stroke=\"currentColor\" opacity=\"0.33999999999999997\"/><ellipse cx=\"120\" cy=\"120\" rx=\"62.4\" ry=\"68\" transform=\"rotate(40 120 120)\" stroke=\"currentColor\" opacity=\"0.37\"/><ellipse cx=\"120\" cy=\"120\" rx=\"60.5\" ry=\"68\" transform=\"rotate(50 120 120)\" stroke=\"currentColor\" opacity=\"0.4\"/><ellipse cx=\"120\" cy=\"120\" rx=\"58.6\" ry=\"68\" transform=\"rotate(60 120 120)\" stroke=\"currentColor\" opacity=\"0.43\"/><ellipse cx=\"120\" cy=\"120\" rx=\"56.7\" ry=\"68\" transform=\"rotate(70 120 120)\" stroke=\"currentColor\" opacity=\"0.45999999999999996\"/><ellipse cx=\"120\" cy=\"120\" rx=\"54.8\" ry=\"68\" transform=\"rotate(80 120 120)\" stroke=\"currentColor\" opacity=\"0.49\"/><ellipse cx=\"120\" cy=\"120\" rx=\"52.900000000000006\" ry=\"68\" transform=\"rotate(90 120 120)\" stroke=\"currentColor\" opacity=\"0.52\"/><ellipse cx=\"120\" cy=\"120\" rx=\"51\" ry=\"68\" transform=\"rotate(100 120 120)\" stroke=\"currentColor\" opacity=\"0.55\"/><ellipse cx=\"120\" cy=\"120\" rx=\"49.1\" ry=\"68\" transform=\"rotate(110 120 120)\" stroke=\"currentColor\" opacity=\"0.58\"/><ellipse cx=\"120\" cy=\"120\" rx=\"47.2\" ry=\"68\" transform=\"rotate(120 120 120)\" stroke=\"currentColor\" opacity=\"0.61\"/><ellipse cx=\"120\" cy=\"120\" rx=\"45.3\" ry=\"68\" transform=\"rotate(130 120 120)\" stroke=\"currentColor\" opacity=\"0.64\"/><ellipse cx=\"120\" cy=\"120\" rx=\"43.400000000000006\" ry=\"68\" transform=\"rotate(140 120 120)\" stroke=\"currentColor\" opacity=\"0.6699999999999999\"/><ellipse cx=\"120\" cy=\"120\" rx=\"41.5\" ry=\"68\" transform=\"rotate(150 120 120)\" stroke=\"currentColor\" opacity=\"0.7\"/><ellipse cx=\"120\" cy=\"120\" rx=\"39.6\" ry=\"68\" transform=\"rotate(160 120 120)\" stroke=\"currentColor\" opacity=\"0.73\"/><ellipse cx=\"120\" cy=\"120\" rx=\"37.7\" ry=\"68\" transform=\"rotate(170 120 120)\" stroke=\"currentColor\" opacity=\"0.76\"/></svg><span class=\"ds-project-cross\" aria-hidden=\"true\"><span class=\"ds-project-corner-start\"></span><span class=\"ds-project-corner-end\"></span></span><span class=\"ds-project-inspect\">Inspect <svg width=\"13\" height=\"13\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></span></button><div class=\"ds-project-copy\"><span class=\"ds-project-category\">TypeScript</span><h3 class=\"ds-project-title\" id=\"ds-project-buggy\"><button type=\"button\" class=\"ds-project-title-button\" aria-label=\"Open Buggy details\" aria-haspopup=\"dialog\">Buggy<svg class=\"ds-project-title-arrow\" width=\"26\" height=\"26\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></button></h3><p class=\"ds-project-description\">Bug tracking platform with built-in exception catcher to auto-open issues and allow developers to work with it</p><a class=\"ds-project-destination\" href=\"https://github.com/brunodmsi/Buggy\" target=\"_blank\" rel=\"noopener noreferrer\">View on GitHub<svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></a></div></article>",
+      "css": ".ds-project{container-type:inline-size;display:flex;flex-direction:column;min-width:0;padding-bottom:50px;color:var(--foreground, #edf1e9);font-family:var(--font-archivo, \"Archivo\"), sans-serif;background:var(--background, #050505)}.ds-project-node{position:relative;display:block;width:min(100%,400px);height:330px;align-self:center;border:0;border-radius:0;padding:0;color:inherit;background:none;cursor:pointer;touch-action:manipulation}.ds-project-static-node{display:block;width:100%;height:100%;color:#91c1ab}.ds-project-cross{position:absolute;inset:0;pointer-events:none;opacity:.45}.ds-project-corner-start,.ds-project-corner-end{position:absolute;width:11px;height:11px;border-top:1px solid #7ed49d;border-left:1px solid #7ed49d}.ds-project-corner-start{left:0;top:30%}.ds-project-corner-end{right:0;bottom:25%;transform:rotate(180deg)}.ds-project-inspect{position:absolute;bottom:15px;left:50%;display:flex;align-items:center;gap:7px;transform:translateX(-50%);color:#b3d9c1;font-family:var(--font-archivo, \"Archivo\"), sans-serif;font-size:11px;font-weight:400;line-height:1.5}.ds-project-node:hover .ds-project-inspect{color:#95ffb6}.ds-project-copy{position:relative;border-top:1px solid #2d4837;padding-top:23px;background:linear-gradient(180deg,#050505a8,#05050538)}.ds-project-category{font-family:var(--font-geist-mono, \"Geist Mono\"), monospace;font-size:10px;line-height:1.5;color:#9dbfa9}.ds-project-title{margin:16px 0 0;font-size:clamp(35px,4.5vw,76px);font-weight:500;letter-spacing:-.035em;line-height:1.08}.ds-project-title-button{width:100%;display:flex;align-items:center;justify-content:space-between;text-align:left;padding:0;gap:20px;border:0;background:none;color:inherit;font:inherit;cursor:pointer;touch-action:manipulation}.ds-project-title-arrow{width:26px;height:26px;flex-shrink:0;transition:transform .3s}.ds-project-title-button:hover .ds-project-title-arrow{transform:translate(4px,-4px);color:#8ef4b1}.ds-project-description{max-width:47ch;margin:20px 0 0;font-size:14px;line-height:1.7;color:#b3c4b9;text-wrap:pretty}.ds-project-destination{display:inline-flex;align-items:center;gap:7px;margin-top:23px;padding:8px 0;font-size:11px;line-height:1.5;color:#c7dfd0;text-decoration:none;text-underline-offset:.23em;touch-action:manipulation}.ds-project-destination:hover{text-decoration:underline;color:#8ef4b1}.ds-project-node:focus-visible{outline:2px solid #91f7bc;outline-offset:7px}.ds-project-title-button:focus-visible{outline:2px solid #91f7bc;outline-offset:7px}.ds-project-destination:focus-visible{outline:2px solid #91f7bc;outline-offset:7px}@container(max-width:600px){.ds-project-node{height:290px;width:85%}.ds-project-copy{padding-top:20px}.ds-project-title{margin-top:12px;font-size:12.6cqw}.ds-project-title-arrow{width:22px;height:22px}.ds-project-description{margin-top:15px;max-width:39ch;font-size:13px}.ds-project-destination{margin-top:14px}.ds-project-inspect{bottom:12px}}@media(prefers-reduced-motion:reduce){.ds-project-title-arrow{transition:none}}"
+    },
+    {
+      "name": "Language particle",
+      "kind": "button",
+      "refersTo": "language-particle",
+      "description": "The existing Rust toggle in its selected state. Selection expands the particle ring; placement belongs to the language map, not to a proficiency scale.",
+      "html": "<button type=\"button\" class=\"ds-language\" aria-label=\"Illuminate Rust\" aria-pressed=\"true\"><span class=\"ds-language-dot\" aria-hidden=\"true\"></span>Rust</button>",
+      "css": ".ds-language{display:inline-flex;align-items:center;gap:12px;padding:12px 7px;border:0;background:none;color:var(--foreground, #edf1e9);font-family:var(--font-archivo, \"Archivo\"), sans-serif;font-size:clamp(15px,1.55vw,24px);font-weight:400;line-height:1.5;white-space:nowrap;letter-spacing:-.02em;transition:color .25s;cursor:pointer;touch-action:manipulation}.ds-language-dot{display:block;width:5px;height:5px;border-radius:50%;background:#9cecbb;outline:1px solid #56c28055;outline-offset:6px}.ds-language:hover,.ds-language[aria-pressed=\"true\"]{color:#85ffaf}.ds-language[aria-pressed=\"true\"] .ds-language-dot{outline-color:#b2facc;outline-offset:10px}.ds-language:focus-visible{outline:2px solid #91f7bc;outline-offset:7px}@media(max-width:600px){.ds-language{font-size:14px;gap:8px;padding:15px 0}.ds-language-dot{width:3px;height:3px;outline-offset:4px}}@media(max-width:360px){.ds-language{font-size:12px;gap:6px}}@media(prefers-reduced-motion:reduce){.ds-language{transition:none}}"
+    },
+    {
+      "name": "In-world project detail",
+      "kind": "custom",
+      "refersTo": "project-detail",
+      "description": "Buggy's real detail presentation and Close/Return controls. A bounded visual specimen replaces the application's fixed native dialog; focus trapping, dismissal and restoration stay in the application.",
+      "html": "<div class=\"ds-detail-frame\"><section class=\"ds-detail\" role=\"dialog\" aria-modal=\"false\" aria-labelledby=\"ds-detail-heading\" aria-describedby=\"ds-detail-description\"><div class=\"ds-detail-object\"><svg class=\"ds-detail-static-node\" viewBox=\"0 0 240 240\" fill=\"none\" aria-hidden=\"true\"><ellipse cx=\"120\" cy=\"120\" rx=\"70\" ry=\"68\" transform=\"rotate(0 120 120)\" stroke=\"currentColor\" opacity=\"0.25\"/><ellipse cx=\"120\" cy=\"120\" rx=\"68.1\" ry=\"68\" transform=\"rotate(10 120 120)\" stroke=\"currentColor\" opacity=\"0.28\"/><ellipse cx=\"120\" cy=\"120\" rx=\"66.2\" ry=\"68\" transform=\"rotate(20 120 120)\" stroke=\"currentColor\" opacity=\"0.31\"/><ellipse cx=\"120\" cy=\"120\" rx=\"64.3\" ry=\"68\" transform=\"rotate(30 120 120)\" stroke=\"currentColor\" opacity=\"0.33999999999999997\"/><ellipse cx=\"120\" cy=\"120\" rx=\"62.4\" ry=\"68\" transform=\"rotate(40 120 120)\" stroke=\"currentColor\" opacity=\"0.37\"/><ellipse cx=\"120\" cy=\"120\" rx=\"60.5\" ry=\"68\" transform=\"rotate(50 120 120)\" stroke=\"currentColor\" opacity=\"0.4\"/><ellipse cx=\"120\" cy=\"120\" rx=\"58.6\" ry=\"68\" transform=\"rotate(60 120 120)\" stroke=\"currentColor\" opacity=\"0.43\"/><ellipse cx=\"120\" cy=\"120\" rx=\"56.7\" ry=\"68\" transform=\"rotate(70 120 120)\" stroke=\"currentColor\" opacity=\"0.45999999999999996\"/><ellipse cx=\"120\" cy=\"120\" rx=\"54.8\" ry=\"68\" transform=\"rotate(80 120 120)\" stroke=\"currentColor\" opacity=\"0.49\"/><ellipse cx=\"120\" cy=\"120\" rx=\"52.900000000000006\" ry=\"68\" transform=\"rotate(90 120 120)\" stroke=\"currentColor\" opacity=\"0.52\"/><ellipse cx=\"120\" cy=\"120\" rx=\"51\" ry=\"68\" transform=\"rotate(100 120 120)\" stroke=\"currentColor\" opacity=\"0.55\"/><ellipse cx=\"120\" cy=\"120\" rx=\"49.1\" ry=\"68\" transform=\"rotate(110 120 120)\" stroke=\"currentColor\" opacity=\"0.58\"/><ellipse cx=\"120\" cy=\"120\" rx=\"47.2\" ry=\"68\" transform=\"rotate(120 120 120)\" stroke=\"currentColor\" opacity=\"0.61\"/><ellipse cx=\"120\" cy=\"120\" rx=\"45.3\" ry=\"68\" transform=\"rotate(130 120 120)\" stroke=\"currentColor\" opacity=\"0.64\"/><ellipse cx=\"120\" cy=\"120\" rx=\"43.400000000000006\" ry=\"68\" transform=\"rotate(140 120 120)\" stroke=\"currentColor\" opacity=\"0.6699999999999999\"/><ellipse cx=\"120\" cy=\"120\" rx=\"41.5\" ry=\"68\" transform=\"rotate(150 120 120)\" stroke=\"currentColor\" opacity=\"0.7\"/><ellipse cx=\"120\" cy=\"120\" rx=\"39.6\" ry=\"68\" transform=\"rotate(160 120 120)\" stroke=\"currentColor\" opacity=\"0.73\"/><ellipse cx=\"120\" cy=\"120\" rx=\"37.7\" ry=\"68\" transform=\"rotate(170 120 120)\" stroke=\"currentColor\" opacity=\"0.76\"/></svg></div><article class=\"ds-detail-panel\"><button type=\"button\" class=\"ds-detail-close\" aria-label=\"Close project details\">Close<svg width=\"21\" height=\"21\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M18 6 6 18\"/><path d=\"m6 6 12 12\"/></svg></button><p class=\"ds-detail-category\">TypeScript</p><h2 class=\"ds-detail-title\" id=\"ds-detail-heading\">Buggy</h2><p class=\"ds-detail-body\" id=\"ds-detail-description\">Bug tracking platform with built-in exception catcher to auto-open issues and allow developers to work with it</p><a class=\"ds-detail-destination\" href=\"https://github.com/brunodmsi/Buggy\" target=\"_blank\" rel=\"noopener noreferrer\">View on GitHub<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></a><button type=\"button\" class=\"ds-detail-return\"><svg class=\"ds-detail-return-arrow\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg>Return to the connections</button></article></section></div>",
+      "css": ".ds-detail-frame{container-type:inline-size;background:var(--background, #050505);color:var(--foreground, #edf1e9);font-family:var(--font-archivo, \"Archivo\"), sans-serif}.ds-detail{position:relative;display:flex;align-items:center;justify-content:flex-end;min-height:550px;background:linear-gradient(90deg,#0505050a 0%,#05050500 30%,#050505de 59%,#050505fa 100%)}.ds-detail-object{position:absolute;pointer-events:none;top:15%;left:2%;width:48%;height:65%}.ds-detail-static-node{display:block;width:100%;height:100%;color:#91c1ab}.ds-detail-panel{position:relative;width:48%;min-height:550px;padding:100px 7cqw 60px 2cqw}.ds-detail-close{position:absolute;top:0;right:5cqw;display:flex;align-items:center;gap:12px;height:50px;padding:10px 0 10px 18px;border:0;background:none;color:inherit;font-family:var(--font-archivo, \"Archivo\"), sans-serif;font-size:12px;line-height:1.5;cursor:pointer}.ds-detail-close:hover{color:#a8e8bd}.ds-detail-category{margin:0;font-family:var(--font-geist-mono, \"Geist Mono\"), monospace;font-size:10px;line-height:1.5;color:#9dbfa9}.ds-detail-title{font-size:clamp(55px,6.5cqw,115px);font-weight:500;line-height:.98;letter-spacing:-.04em;margin:22px 0 35px;overflow-wrap:anywhere;text-wrap:balance}.ds-detail-body{margin:0;font-size:clamp(17px,1.5cqw,23px);line-height:1.55;color:#cadad0;max-width:40ch}.ds-detail-destination{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-bottom:1px solid #739780;margin-top:40px;color:inherit;text-decoration:none;font-size:15px;line-height:1.5}.ds-detail-destination:hover{color:#a8e8bd}.ds-detail-return{display:inline-flex;align-items:center;gap:14px;padding:16px 0;margin-top:28px;border:0;background:none;color:#b9cfc1;font-family:var(--font-archivo, \"Archivo\"), sans-serif;font-size:12px;line-height:1.5;cursor:pointer}.ds-detail-return-arrow{transform:rotate(180deg)}.ds-detail-close:focus-visible{outline:2px solid #91f7bc;outline-offset:7px}.ds-detail-destination:focus-visible{outline:2px solid #91f7bc;outline-offset:7px}.ds-detail-return:focus-visible{outline:2px solid #91f7bc;outline-offset:7px}@container(max-width:900px){.ds-detail-panel{width:52%;padding-right:5cqw}.ds-detail-title{font-size:7cqw}}@container(max-width:600px){.ds-detail{display:block;padding-top:36cqw;background:linear-gradient(180deg,#05050520 0%,#05050545 25%,#050505f2 47%,#050505 100%)}.ds-detail-panel{width:auto;min-height:auto;padding:55px 8cqw 50px}.ds-detail-close{top:-33cqw;right:7cqw;background:#050505b0;padding:5px 10px}.ds-detail-title{font-size:15cqw;margin:16px 0 25px}.ds-detail-body{font-size:17px;line-height:1.5}.ds-detail-destination{margin-top:24px;font-size:14px;padding:20px 0}.ds-detail-return{margin-top:16px;font-size:11px}.ds-detail-object{left:14%;width:72%;top:4%;height:33%}}"
+    },
+    {
+      "name": "Contact destination",
+      "kind": "custom",
+      "refersTo": "contact-link",
+      "description": "The real mailto address and outward-arrow treatment. Container-relative sizing keeps the page's responsive text pattern inside the specimen.",
+      "html": "<div class=\"ds-contact-frame\"><a class=\"ds-contact\" href=\"mailto:bruno@demasi.dev\"><span>bruno@demasi.dev</span><svg class=\"ds-contact-arrow\" width=\"45\" height=\"45\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></a></div>",
+      "css": ".ds-contact-frame{container-type:inline-size;color:var(--foreground, #edf1e9);font-family:var(--font-archivo, \"Archivo\"), sans-serif}.ds-contact{position:relative;display:flex;align-items:center;justify-content:space-between;max-width:790px;width:66%;margin-top:70px;padding:22px 0;border-bottom:1px solid #658f73;font-size:clamp(22px,3.25cqw,55px);font-weight:400;line-height:1.5;letter-spacing:-.03em;color:inherit;text-decoration:none;touch-action:manipulation}.ds-contact-arrow{width:45px;height:45px;flex-shrink:0;transition:transform .3s}.ds-contact:hover .ds-contact-arrow{transform:translate(4px,-4px)}.ds-contact:hover{color:#c2ffd8}.ds-contact:focus-visible{outline:2px solid #91f7bc;outline-offset:7px}@container(max-width:600px){.ds-contact{width:100%;font-size:7.2cqw;margin-top:60px;padding:20px 0}.ds-contact-arrow{width:28px;height:28px}}@media(prefers-reduced-motion:reduce){.ds-contact-arrow{transition:none}}"
+    },
+    {
+      "name": "Conducting name",
+      "kind": "custom",
+      "refersTo": "conducting-name",
+      "description": "The existing solid BRUNO, outlined DE MASI and forty-four-path static bundle. The specimen uses container-relative viewport units; the application retains the source viewport sizing and full hero layout.",
+      "html": "<div class=\"ds-name-frame\"><div class=\"ds-name-artwork\"><svg class=\"ds-name-filaments\" viewBox=\"0 0 1440 1000\" fill=\"none\" aria-hidden=\"true\" preserveAspectRatio=\"xMidYMid slice\"><defs><linearGradient id=\"ds-name-filament-metal\" x1=\"80\" y1=\"800\" x2=\"1350\" y2=\"110\" gradientUnits=\"userSpaceOnUse\"><stop stop-color=\"#0b542d\"/><stop offset=\".32\" stop-color=\"#22c55e\"/><stop offset=\".5\" stop-color=\"#c5e8d8\"/><stop offset=\".62\" stop-color=\"#436c70\"/><stop offset=\".76\" stop-color=\"#69e2b6\"/><stop offset=\"1\" stop-color=\"#152e31\"/></linearGradient></defs><path d=\"M -160 834.4 C 100 734.4, 270 770, 540 374.4 C 850 -25.599999999999994, 1204.4 165, 1044.4 359.4 C 914.4 710, 614.4 374.4, 935 124.4 C 954.4 -15.599999999999994, 1260 19.400000000000006, 1580 -195.6\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"2.5\" opacity=\"0.88\"/><path d=\"M -160 839.2 C 100 739.2, 270 814.1960286913345, 540 379.2 C 894.1960286913345 -20.799999999999997, 1209.2 209.1960286913345, 1049.2 364.2 C 919.2 754.1960286913345, 619.2 379.2, 979.1960286913345 129.2 C 959.2 -10.799999999999997, 1260 24.200000000000003, 1580 -190.8\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.33999999999999997\"/><path d=\"M -160 844 C 100 744, 270 804.4863100673181, 540 384 C 884.4863100673181 -16, 1214 199.48631006731807, 1054 369 C 924 744.4863100673181, 624 384, 969.4863100673181 134 C 964 -6, 1260 29, 1580 -186\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.44\"/><path d=\"M -160 848.8 C 100 748.8, 270 752.7137552253455, 540 388.8 C 832.7137552253455 -11.200000000000003, 1218.8 147.71375522534552, 1058.8 373.8 C 928.8 692.7137552253455, 628.8 388.8, 917.7137552253455 138.8 C 968.8 -1.2000000000000028, 1260 33.8, 1580 -181.2\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.54\"/><path d=\"M -160 853.6 C 100 753.6, 270 722.0251749042903, 540 393.6 C 802.0251749042903 -6.3999999999999915, 1223.6 117.02517490429037, 1063.6 378.6 C 933.6 662.0251749042903, 633.6 393.6, 887.0251749042903 143.60000000000002 C 973.6 3.6000000000000085, 1260 38.60000000000001, 1580 -176.39999999999998\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.64\"/><path d=\"M -160 858.4 C 100 758.4, 270 749.8513271436867, 540 398.4 C 829.8513271436867 -1.5999999999999943, 1228.4 144.85132714368675, 1068.4 383.4 C 938.4 689.8513271436867, 638.4 398.4, 914.8513271436867 148.4 C 978.4 8.400000000000006, 1260 43.400000000000006, 1580 -171.6\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.24\"/><path d=\"M -160 863.2 C 100 763.2, 270 802.2527477927773, 540 403.2 C 882.2527477927773 3.200000000000003, 1233.2 197.25274779277734, 1073.2 388.2 C 943.2 742.2527477927773, 643.2 403.2, 967.2527477927773 153.2 C 983.2 13.200000000000003, 1260 48.2, 1580 -166.8\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.33999999999999997\"/><path d=\"M -160 868 C 100 768, 270 815.3156006061546, 540 408 C 895.3156006061546 8, 1238 210.31560060615453, 1078 393 C 948 755.3156006061546, 648 408, 980.3156006061546 158 C 988 18, 1260 53, 1580 -162\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"2.5\" opacity=\"0.88\"/><path d=\"M -160 872.8 C 100 772.8, 270 773.1071680110832, 540 412.8 C 853.1071680110832 12.799999999999997, 1242.8 168.10716801108316, 1082.8 397.8 C 952.8 713.1071680110832, 652.8 412.8, 938.1071680110832 162.8 C 992.8 22.799999999999997, 1260 57.8, 1580 -157.2\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.54\"/><path d=\"M -160 877.6 C 100 777.6, 270 727.1089330597509, 540 417.6 C 807.1089330597509 17.6, 1247.6 122.10893305975097, 1087.6 402.6 C 957.6 667.1089330597509, 657.6 417.6, 892.1089330597509 167.6 C 997.6 27.6, 1260 62.6, 1580 -152.4\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.64\"/><path d=\"M -160 882.4 C 100 782.4, 270 733.4247879718864, 540 422.4 C 813.4247879718864 22.400000000000006, 1252.4 128.42478797188642, 1092.4 407.4 C 962.4 673.4247879718864, 662.4 422.4, 898.4247879718864 172.4 C 1002.4 32.400000000000006, 1260 67.4, 1580 -147.6\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.24\"/><path d=\"M -160 887.2 C 100 787.2, 270 784.3513057868507, 540 427.2 C 864.3513057868507 27.200000000000003, 1257.2 179.35130578685073, 1097.2 412.2 C 967.2 724.3513057868507, 667.2 427.2, 949.3513057868507 177.2 C 1007.2 37.2, 1260 72.2, 1580 -142.8\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.33999999999999997\"/><path d=\"M -160 892 C 100 792, 270 817.7735842776381, 540 432 C 897.7735842776381 32, 1262 212.77358427763812, 1102 417 C 972 757.7735842776381, 672 432, 982.7735842776381 182 C 1012 42, 1260 77, 1580 -138\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.44\"/><path d=\"M -160 896.8 C 100 796.8, 270 792.9265829558727, 540 436.8 C 872.9265829558727 36.800000000000004, 1266.8 187.92658295587268, 1106.8 421.8 C 976.8 732.9265829558727, 676.8 436.8, 957.9265829558727 186.8 C 1016.8 46.800000000000004, 1260 81.80000000000001, 1580 -133.2\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.54\"/><path d=\"M -160 901.6 C 100 801.6, 270 740.116105633694, 540 441.6 C 820.116105633694 41.6, 1271.6 135.11610563369408, 1111.6 426.6 C 981.6 680.116105633694, 681.6 441.6, 905.116105633694 191.6 C 1021.6 51.6, 1260 86.6, 1580 -128.4\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"2.5\" opacity=\"0.88\"/><path d=\"M -160 906.4 C 100 806.4, 270 723.7549136027203, 540 446.4 C 803.7549136027203 46.4, 1276.4 118.75491360272031, 1116.4 431.4 C 986.4 663.7549136027203, 686.4 446.4, 888.7549136027203 196.4 C 1026.4 56.4, 1260 91.4, 1580 -123.6\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.24\"/><path d=\"M -160 911.2 C 100 811.2, 270 763.7986976685494, 540 451.2 C 843.7986976685494 51.2, 1281.2 158.79869766854935, 1121.2 436.2 C 991.2 703.7986976685494, 691.2 451.2, 928.7986976685494 201.2 C 1031.2 61.2, 1260 96.2, 1580 -118.8\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.33999999999999997\"/><path d=\"M -160 916 C 100 816, 270 811.4061892982396, 540 456 C 891.4061892982396 56, 1286 206.40618929823967, 1126 441 C 996 751.4061892982396, 696 456, 976.4061892982396 206 C 1036 66, 1260 101, 1580 -114\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.44\"/><path d=\"M -160 920.8 C 100 820.8, 270 808.5106913224379, 540 460.8 C 888.5106913224379 60.8, 1290.8 203.51069132243788, 1130.8 445.8 C 1000.8 748.5106913224379, 700.8 460.8, 973.5106913224379 210.8 C 1040.8 70.8, 1260 105.8, 1580 -109.2\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.54\"/><path d=\"M -160 925.6 C 100 825.6, 270 758.6438328684075, 540 465.6 C 838.6438328684075 65.6, 1295.6 153.64383286840743, 1135.6 450.6 C 1005.6 698.6438328684075, 705.6 465.6, 923.6438328684075 215.6 C 1045.6 75.6, 1260 110.6, 1580 -104.4\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.64\"/><path d=\"M -160 930.4 C 100 830.4, 270 722.6280532102089, 540 470.4 C 802.6280532102089 70.4, 1300.4 117.62805321020886, 1140.4 455.4 C 1010.4 662.6280532102089, 710.4 470.4, 887.6280532102089 220.4 C 1050.4 80.4, 1260 115.4, 1580 -99.6\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.24\"/><path d=\"M -160 935.2 C 100 835.2, 270 744.391677473599, 540 475.2 C 824.391677473599 75.2, 1305.2 139.39167747359897, 1145.2 460.2 C 1015.2 684.391677473599, 715.2 475.2, 909.391677473599 225.2 C 1055.2 85.2, 1260 120.2, 1580 -94.8\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"2.5\" opacity=\"0.88\"/><path d=\"M -160 940 C 100 840, 270 797.3896864578236, 540 480 C 877.3896864578236 80, 1310 192.3896864578236, 1150 465 C 1020 737.3896864578236, 720 480, 962.3896864578236 230 C 1060 90, 1260 125, 1580 -90\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.44\"/><path d=\"M -160 944.8 C 100 844.8, 270 816.9805871347895, 540 484.8 C 896.9805871347895 84.8, 1314.8 211.98058713478952, 1154.8 469.8 C 1024.8 756.9805871347895, 724.8 484.8, 981.9805871347895 234.8 C 1064.8 94.8, 1260 129.8, 1580 -85.2\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.54\"/><path d=\"M -160 949.6 C 100 849.6, 270 779.2694239430318, 540 489.6 C 859.2694239430318 89.6, 1319.6 174.2694239430318, 1159.6 474.6 C 1029.6 719.2694239430318, 729.6 489.6, 944.2694239430318 239.6 C 1069.6 99.6, 1260 134.6, 1580 -80.4\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.64\"/><path d=\"M -160 954.4 C 100 854.4, 270 730.2523755930922, 540 494.4 C 810.2523755930922 94.4, 1324.4 125.25237559309227, 1164.4 479.4 C 1034.4 670.2523755930922, 734.4 494.4, 895.2523755930922 244.4 C 1074.4 104.4, 1260 139.4, 1580 -75.6\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.24\"/><path d=\"M -160 959.2 C 100 859.2, 270 729.7153708377563, 540 499.2 C 809.7153708377563 99.2, 1329.2 124.71537083775627, 1169.2 484.2 C 1039.2 669.7153708377563, 739.2 499.2, 894.7153708377563 249.2 C 1079.2 109.2, 1260 144.2, 1580 -70.8\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.33999999999999997\"/><path d=\"M -160 964 C 100 864, 270 778.313392568144, 540 504 C 858.313392568144 104, 1334 173.3133925681439, 1174 489 C 1044 718.313392568144, 744 504, 943.313392568144 254 C 1084 114, 1260 149, 1580 -66\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.44\"/><path d=\"M -160 968.8 C 100 868.8, 270 816.7715973877976, 540 508.8 C 896.7715973877976 108.8, 1338.8 211.77159738779756, 1178.8 493.8 C 1048.8 756.7715973877976, 748.8 508.8, 981.7715973877976 258.8 C 1088.8 118.8, 1260 153.8, 1580 -61.2\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"2.5\" opacity=\"0.88\"/><path d=\"M -160 973.6 C 100 873.6, 270 798.1826424291272, 540 513.6 C 878.1826424291272 113.6, 1343.6 193.18264242912718, 1183.6 498.6 C 1053.6 738.1826424291272, 753.6 513.6, 963.1826424291272 263.6 C 1093.6 123.6, 1260 158.6, 1580 -56.4\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.64\"/><path d=\"M -160 978.4 C 100 878.4, 270 745.2194134361638, 540 518.4 C 825.2194134361638 118.4, 1348.4 140.2194134361638, 1188.4 503.4 C 1058.4 685.2194134361638, 758.4 518.4, 910.2194134361638 268.4 C 1098.4 128.4, 1260 163.4, 1580 -51.6\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.24\"/><path d=\"M -160 983.2 C 100 883.2, 270 722.4809823988194, 540 523.2 C 802.4809823988194 123.19999999999999, 1353.2 117.48098239881942, 1193.2 508.2 C 1063.2 662.4809823988194, 763.2 523.2, 887.4809823988194 273.2 C 1103.2 133.2, 1260 168.2, 1580 -46.800000000000004\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.33999999999999997\"/><path d=\"M -160 988 C 100 888, 270 757.7013370562903, 540 528 C 837.7013370562903 128, 1358 152.70133705629027, 1198 513 C 1068 697.7013370562903, 768 528, 922.7013370562903 278 C 1108 138, 1260 173, 1580 -42\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.44\"/><path d=\"M -160 992.8 C 100 892.8, 270 807.9223294767255, 540 532.8 C 887.9223294767255 132.8, 1362.8 202.92232947672548, 1202.8 517.8 C 1072.8 747.9223294767255, 772.8 532.8, 972.9223294767255 282.8 C 1112.8 142.8, 1260 177.8, 1580 -37.2\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.54\"/><path d=\"M -160 997.6 C 100 897.6, 270 811.8895843801818, 540 537.6 C 891.8895843801818 137.6, 1367.6 206.8895843801818, 1207.6 522.6 C 1077.6 751.8895843801818, 777.6 537.6, 976.8895843801818 287.6 C 1117.6 147.6, 1260 182.6, 1580 -32.400000000000006\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.64\"/><path d=\"M -160 1002.4 C 100 902.4, 270 764.764254325074, 540 542.4 C 844.764254325074 142.4, 1372.4 159.76425432507403, 1212.4 527.4 C 1082.4 704.764254325074, 782.4 542.4, 929.764254325074 292.4 C 1122.4 152.4, 1260 187.4, 1580 -27.6\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"2.5\" opacity=\"0.88\"/><path d=\"M -160 1007.2 C 100 907.2, 270 724.0249456324543, 540 547.2 C 804.0249456324543 147.2, 1377.2 119.02494563245426, 1217.2 532.2 C 1087.2 664.0249456324543, 787.2 547.2, 889.0249456324543 297.2 C 1127.2 157.2, 1260 192.2, 1580 -22.799999999999997\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.33999999999999997\"/><path d=\"M -160 1012 C 100 912, 270 739.3612558796052, 540 552 C 819.3612558796052 152, 1382 134.36125587960527, 1222 537 C 1092 679.3612558796052, 792 552, 904.3612558796052 302 C 1132 162, 1260 197, 1580 -18\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.44\"/><path d=\"M -160 1016.8 C 100 916.8, 270 792.0675391202237, 540 556.8 C 872.0675391202237 156.8, 1386.8 187.06753912022373, 1226.8 541.8 C 1096.8 732.0675391202237, 796.8 556.8, 957.0675391202237 306.8 C 1136.8 166.8, 1260 201.8, 1580 -13.200000000000003\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.54\"/><path d=\"M -160 1021.6 C 100 921.6, 270 817.858119232981, 540 561.6 C 897.858119232981 161.6, 1391.6 212.85811923298104, 1231.6 546.6 C 1101.6 757.858119232981, 801.6 561.6, 982.858119232981 311.6 C 1141.6 171.6, 1260 206.6, 1580 -8.400000000000006\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.64\"/><path d=\"M -160 1026.4 C 100 926.4, 270 785.2763125329194, 540 566.4 C 865.2763125329194 166.39999999999998, 1396.4 180.27631253291943, 1236.4 551.4 C 1106.4 725.2763125329194, 806.4 566.4, 950.2763125329194 316.4 C 1146.4 176.39999999999998, 1260 211.39999999999998, 1580 -3.6000000000000085\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.24\"/><path d=\"M -160 1031.2 C 100 931.2, 270 734.0620388964938, 540 571.2 C 814.0620388964938 171.2, 1401.2 129.0620388964938, 1241.2 556.2 C 1111.2 674.0620388964938, 811.2 571.2, 899.0620388964938 321.2 C 1151.2 181.2, 1260 216.2, 1580 1.2000000000000028\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.33999999999999997\"/><path d=\"M -160 1036 C 100 936, 270 726.6811753568074, 540 576 C 806.6811753568074 176, 1406 121.68117535680746, 1246 561 C 1116 666.6811753568074, 816 576, 891.6811753568074 326 C 1156 186, 1260 221, 1580 6\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"2.5\" opacity=\"0.88\"/><path d=\"M -160 1040.8 C 100 940.8, 270 772.1361363099171, 540 580.8 C 852.1361363099171 180.8, 1410.8 167.1361363099171, 1250.8 565.8 C 1120.8 712.1361363099171, 820.8 580.8, 937.1361363099171 330.8 C 1160.8 190.8, 1260 225.8, 1580 10.799999999999997\" stroke=\"url(#ds-name-filament-metal)\" stroke-width=\"1\" opacity=\"0.54\"/></svg></div><div class=\"ds-name-position\"><span class=\"ds-name-dot\" aria-hidden=\"true\"></span>Senior Software Engineer</div><h1 class=\"ds-name\"><span class=\"ds-name-first\">Bruno</span> <span class=\"ds-name-surname\">De Masi</span></h1></div>",
+      "css": ".ds-name-frame{container-type:inline-size;position:relative;isolation:isolate;overflow:clip;padding:100px 5.2% 120px;background:var(--background, #050505);color:var(--foreground, #edf1e9);font-family:var(--font-archivo, \"Archivo\"), sans-serif}.ds-name-artwork{position:absolute;inset:0;z-index:-1;opacity:.7;pointer-events:none}.ds-name-filaments{position:absolute;width:100%;height:100%;inset:0;opacity:.84}.ds-name-position{position:relative;z-index:2;display:flex;align-items:center;gap:11px;font-size:clamp(14px,1.1cqw,18px);line-height:1.5;margin:2cqh 0 5cqh .55cqw}.ds-name-dot{display:inline-block;width:5px;height:5px;background:#6ae29d;border-radius:100%}.ds-name{position:relative;margin:0;padding-bottom:.07em;font-size:clamp(130px,23.5cqw,400px);font-weight:500;line-height:.75;letter-spacing:-.04em;text-transform:uppercase;font-variation-settings:\"wdth\" 78,\"wght\" 600;text-wrap:balance}.ds-name-first,.ds-name-surname{display:block;width:fit-content}.ds-name .ds-name-surname{margin-top:.11em;font-size:.98em;color:transparent;-webkit-text-stroke:1.35px #d7e9dd;font-variation-settings:\"wdth\" 83,\"wght\" 560}@container(max-width:600px){.ds-name-position{margin:0 0 40px 2px;font-size:13px}.ds-name{font-size:32cqw;line-height:.83;font-variation-settings:\"wdth\" 72,\"wght\" 610}.ds-name .ds-name-surname{margin-top:.15em;font-size:.96em;-webkit-text-stroke:1px #d4eddd;font-variation-settings:\"wdth\" 70,\"wght\" 560}.ds-name-filaments{width:155%;left:-40%;max-width:none;opacity:.85}}@container(max-width:360px){.ds-name{font-size:31.5cqw}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Sinapse líquida",
+    "overview": "Long-exposure photography of wet optical fibers is the material reference. Open, asymmetric bundles conduct silver, phosphor green and refracted cyan through near-black space. Monumental compressed lettering shares that space with the fibers; the smaller interface stays quiet, precise and legible.\n\nThe recurring language is a solid statement followed by an outlined or gently green continuation, generous editorial intervals, hairline connections and project objects built from strands. Depth belongs to the material and the continuous camera. Native HTML carries the words and actions, while the authored SVG edition preserves the same identity without animation.",
+    "keyCharacteristics": [
+      "Near-black ground with silver-green light and restrained cobalt refraction.",
+      "Monumental Archivo Variable paired with small Geist Mono project labels.",
+      "Open filament geometry, asymmetric spacing and hairline dividers.",
+      "A continuous material world behind readable, keyboard-operable HTML.",
+      "A complete still edition with truthful motion and recovery controls."
+    ],
+    "rules": [
+      {
+        "name": "The Material Color Rule",
+        "body": "Keep HTML/SVG colors distinct from shader base colors: lighting, refraction, fog and tone mapping determine the rendered material, so its base value is not a flat screen swatch.",
+        "section": "colors"
+      },
+      {
+        "name": "The Solid and Outline Rule",
+        "body": "Preserve the filled first line and transparent stroked continuation of the name and closing heading; keep them as selectable, semantic text.",
+        "section": "typography"
+      },
+      {
+        "name": "The Reading Layer Rule",
+        "body": "Keep distortion and chromatic displacement in the artwork; HTML text, focus indicators and native controls remain in the readable foreground.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep the near-black ground, open conducting strands and silver-green material relationship.",
+      "Do preserve Archivo's observed width/weight axes and the solid/outline name treatment.",
+      "Do use Geist Mono for the project-category role; keep the other observed sans-serif controls in Archivo.",
+      "Do preserve native text, real destinations, visible focus and the complete static artwork when motion is unavailable.",
+      "Do make motion labels and interaction hints describe the renderer's effective state.",
+      "Do retain the mobile bottom navigation, stacked project detail and safe-area spacing."
+    ],
+    "donts": [
+      "Don't replace the chosen filament world with an opaque card grid or a closed skin around the organism.",
+      "Don't distort the HTML reading layer with the artwork's lens or shader effects.",
+      "Don't erase keyboard focus or make project content depend on hover or WebGL.",
+      "Don't assign proficiency, dependencies or new factual project claims to decorative objects and language positions.",
+      "Don't treat the synthesized panel ramps as implemented CSS tokens or turn shader base colors into flat UI equivalents.",
+      "Don't present documentation or the restricted S1–S3 verdict as proof of 60 fps or Lighthouse 90+."
+    ]
+  }
+}

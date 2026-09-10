@@ -17,6 +17,7 @@ Portfolio visitors on desktop and touch devices. The audience may include hiring
 ## Current Capabilities and Constraints
 
 - `#reef` is O Condutor: a short, replayable traversal across authored `b`, `d`, `m`, and dot strokes. Three sequential pulse gates repair bridges; completion gives an overhead `bdm.` reading.
+- Seven optional sparks are collected by walking the live strands. Collecting all seven awards a purely cosmetic crooked halo and the visitor title “Employee of the void. Salary: absolutely nothing.” Replay resets it; there is no account, persistence, competitive score or extra input.
 - Play is explicit. Keyboard input is scoped to the focused stage: WASD/arrows walk, Space pulses, and Escape exits. Touch supplies a stick and Pulse control. Native page scrolling remains available.
 - The stage pauses on blur, hidden tab, focus leaving the stage, or leaving the stage viewport; resuming is explicit. There is no score, timer pressure, account, required audio, combat, or required completion.
 - Reduced motion, unavailable WebGL, lost context, and exhausted game budget retain a code-native still study. The rest of the portfolio stays usable without WebGL.
