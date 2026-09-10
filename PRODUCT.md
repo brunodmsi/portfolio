@@ -8,36 +8,33 @@ web
 
 ## Product Purpose
 
-Portfólio pessoal de Bruno De Masi, publicado em https://demasi.dev (redireciona para https://www.demasi.dev/). A solicitação atual é reconstruí-lo como uma experiência WebGL viva, mantendo a copy e os dados reais. Sucesso desejado pelo usuário: despertar exploração, revisita durante o scroll e compartilhamento espontâneo.
+Bruno De Masi’s portfolio at `demasi.dev`. The selected Sinapse implementation keeps its real English copy, biography, organisations, language list, and contact links, and replaces the former project-list area with the optional O Condutor game. The desired experience is deliberate exploration without making the portfolio or contact paths contingent on play.
 
 ## Users
 
-Visitantes do portfólio em desktop e dispositivos móveis. Público prioritário de contratação, colaboração ou clientes ainda não especificado; não presumir uma mudança de posicionamento.
+Portfolio visitors on desktop and touch devices. The audience may include hiring, collaboration, or client visitors, but the product makes no new positioning claims.
 
-## Capabilities and Constraints
+## Current Capabilities and Constraints
 
-- Arqueologia e três direções verbais entregues. Em seguida, o usuário autorizou implementar as três direções completas, cada uma em sua própria worktree, para escolher depois de experimentá-las.
-- Implementações em worktrees independentes: Next.js App Router, TypeScript, React Three Fiber, drei, postprocessing, shaders GLSL próprios e Lenis. Tailwind apenas para layout e UI 2D.
-- Jornada solicitada: Superfície (hero), Corrente (sobre), Recife (projetos), Espectro (stack), Portal (contato).
-- Projetos devem abrir detalhes dentro da experiência. O site atual oferece descrições curtas e links externos, sem cases internos completos; não inventar narrativa, resultados, clientes ou responsabilidades.
-- Meta de 60 fps em notebook médio, redução adaptativa de efeitos e complexidade, e Lighthouse 90+ com atenção especial à performance. Resultados sintéticos e limites de validação devem permanecer em docs/verification.md de cada alternativa; não equivalem a medições em aparelho físico.
-- A entrega inclui estrutura de pastas, shaders comentados, código completo e análise dos cortes para metade do orçamento de performance nos READMEs de cada alternativa, além de previews de produção acessíveis pela LAN.
+- `#reef` is O Condutor: a short, replayable traversal across authored `b`, `d`, `m`, and dot strokes. Three sequential pulse gates repair bridges; completion gives an overhead `bdm.` reading.
+- Play is explicit. Keyboard input is scoped to the focused stage: WASD/arrows walk, Space pulses, and Escape exits. Touch supplies a stick and Pulse control. Native page scrolling remains available.
+- The stage pauses on blur, hidden tab, focus leaving the stage, or leaving the stage viewport; resuming is explicit. There is no score, timer pressure, account, required audio, combat, or required completion.
+- Reduced motion, unavailable WebGL, lost context, and exhausted game budget retain a code-native still study. The rest of the portfolio stays usable without WebGL.
+- While the game runs, the ambient background renderer is unmounted so the game owns the only live canvas. The game canvas is loaded only after Play and has no postprocessing.
+- No invented project claims, case studies, results, clients, responsibilities, or new biographical facts. Direct external links remain available.
+- The game starts at DPR 1 and can fall to DPR 0.7 with lower character geometry and a lower-cost procedural material branch. Further prospective half-budget cuts are documented in `README.md`; they are not performance measurements.
 
 ## Brand Commitments
 
-- Manter o nome e a copy real em inglês; não traduzir nem gerar nova bio sem solicitação.
-- Derivar a paleta da identidade publicada: preto quase absoluto e verde, levando-a à iridescência.
-- Organismo que respira, percebe o visitante e se reorganiza com a profundidade; câmera contínua, cursor com inércia, grotesca variável de grande escala e mono técnica pequena.
-- Sinapse líquida, Abisso e Membrana foram implementadas em worktrees separadas para comparação. Em 10 de setembro de 2026, o usuário preferiu Sinapse líquida e pediu nela a marca `bdm.` de Abisso. Sinapse é a direção escolhida para os próximos refinamentos; as outras alternativas e o aplicativo original permanecem preservados.
+- Preserve the real English portfolio copy and the compact `bdm.` identity.
+- Use Sinapse’s near-black field, liquid silver, phosphor green, and cyan as an authored conducting world.
+- Keep content semantic, readable, focusable, and useful without animation or WebGL.
+- Keep O Condutor code-led: authored geometry and procedural shading only; no new shipping raster artwork.
 
-## Evidence on Hand
+## Historical Record
 
-- Inspeção de produção em 9 de setembro de 2026: HTML, CSS computado, metadados, links, hover de projetos e endpoint de insights; capturas desktop escuro/claro e viewport móvel de 390 px.
-- Inventário integral e limites das fontes em docs/archaeology.md.
-- Código existente em src/app e src/components; dados do GitHub e geração opcional de bio em src/lib/github.ts.
-- A bio e os insights do site existente podem ser gerados por IA; a arqueologia registra o que foi servido, sem tratar essas frases como novas afirmações verificadas.
-- previews/ contém experimentos preexistentes do usuário. Não representa aprovação da reconstrução pedida nesta conversa.
+The initial request asked for archaeological work and three separate visual-direction worktrees, followed by project browsing. That is retained as project history, not an active acceptance requirement. On 10 September 2026 the user selected Sinapse líquida, retained the `bdm.` mark, and approved O Condutor as the replacement for the project list. Earlier review and verification material remains historical evidence only; no current O Condutor verification score is claimed until fresh production measurement.
 
 ## Accessibility & Inclusion
 
-Semântica HTML, texto legível, contraste real, foco visível e navegação por teclado. Nenhum conteúdo essencial dependente de hover ou WebGL. Mobile com interação ao alcance do polegar. prefers-reduced-motion deve oferecer uma versão estática editorial completa, mantendo a identidade. Loader narrativo sem bloquear a leitura do conteúdo.
+Semantic HTML, readable text, visible focus, keyboard navigation, and touch-reachable controls. The focused game area does not capture page navigation outside its controls. The static study is the initial reduced-motion experience and the fallback for unavailable animation.
