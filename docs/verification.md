@@ -41,3 +41,11 @@ A [revisão independente](finish-review.md) foi seguida por um [verdict](finish-
 As capturas desktop 1440 × 900 e mobile 390 × 844, `verification.json`, `robustness.json` e relatórios HTML/JSON do Lighthouse estão em `.impeccable/review/`, ignorado pelo Git por serem evidência local, não assets publicados. Nenhuma mensagem de contato foi enviada, nenhum serviço externo foi configurado e não houve deploy público.
 
 Ainda requer aparelho real: frame pacing em GPU integrada, Safari/iOS, Android, resposta ao gesto e alcance físico. A primeira redução para metade do orçamento está documentada no [README](../README.md): tier low, DPR 1, sem bloom/transmissão e shader de um simplex por vértice.
+
+## Ajuste de marca — 10 de setembro de 2026
+
+Após a preferência do usuário por Sinapse, o cabeçalho recebeu a marca `bdm.` de Abisso: Archivo 650, 28px desktop / 27px mobile e ponto #97e8c4. O mundo, os shaders, o conteúdo e os controles de navegação não foram alterados.
+
+Build de produção, ESLint, TypeScript e `git diff --check` passaram novamente. Inspeção de desktop 1440 × 900 e mobile 390 × 844 confirmou a marca; também passaram foco visível por Tab, ativação por Enter, destino `#surface`, nome acessível e presença sem JavaScript. O alvo mede aproximadamente 62 × 52px no desktop e 60 × 51px no mobile. Não houve overflow a 320, 390, 768 ou 1440px. As regras axe `label-content-name-mismatch`, `link-name` e `color-contrast` não encontraram violações no cabeçalho nos perfis desktop, mobile e reduzido. O perfil reduzido permaneceu com zero canvas e animações; não houve erros de página/console.
+
+As novas capturas e o relatório estão em `.impeccable/review/wordmark/`, separados da evidência anterior. A produção na porta 3101 foi recompilada e reiniciada. Lighthouse e fps não foram reavaliados para essa alteração pontual; os números acima pertencem à rodada de 9 de setembro.

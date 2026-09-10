@@ -42,8 +42,8 @@ h1, h2, h3 { font-weight: 500; text-wrap: balance; }
 [data-renderer="ready"] .static-filaments { opacity: 0; }
 .edge-light { position: fixed; inset: 0; pointer-events: none; z-index: 8; box-shadow: inset 1px 0 0 #225b483b, inset -1px 0 0 #749dd22e; }
 .site-header { position: absolute; z-index: 10; top: 0; left: 0; width: 100%; height: 106px; padding: 0 5.2vw; }
-.identity { font-size: 14px; letter-spacing: -.02em; }
-.identity svg { color: #70e79b; }
+.identity { display: inline-block; font-size: 28px; font-weight: 650; letter-spacing: -.04em; line-height: 1; padding: 12px 0; }
+.identity span { color: #97e8c4; }
 .desktop-nav { margin-left: 3vw; font-size: 13px; }
 .desktop-nav a { position: relative; padding: 12px 0; }
 .desktop-nav a::after { content: ""; position: absolute; bottom: 6px; left: 0; height: 1px; width: 100%; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform .3s; }
@@ -169,7 +169,6 @@ h1, h2, h3 { font-weight: 500; text-wrap: balance; }
 @media (max-width: 900px) {
   .site-header { height: 90px; }
   .desktop-nav { gap: 20px; font-size: 12px; }
-  .identity { font-size: 12px; }
   .current { grid-template-columns: 1fr; gap: 60px; padding-top: 130px; padding-bottom: 120px; min-height: 105svh; }
   .current h2 { font-size: 12vw; }
   .current-heading .text-link { margin-top: 30px; }
@@ -187,8 +186,7 @@ h1, h2, h3 { font-weight: 500; text-wrap: balance; }
   html { scroll-padding-top: 25px; }
   .chapter { padding-left: 6vw; padding-right: 6vw; }
   .site-header { padding: 0 6vw; height: 81px; }
-  .identity { font-size: 12px; gap: 9px; }
-  .identity svg { width: 24px; }
+  .identity { font-size: 27px; }
   .desktop-nav { display: none; }
   .motion-toggle { font-size: 10px; }
   .hero { min-height: 100svh; padding-top: 95px; padding-bottom: 165px; justify-content: center; }

@@ -187,7 +187,7 @@ The recurring language is a solid statement followed by an outlined or gently gr
 
 This is the implemented Sinapse system in `experience/sinapse`, extracted on 2026-09-09 from [the stylesheet](src/app/globals.css), [the interface](src/components/sinapse/portfolio.tsx), [the scene](src/components/sinapse/world.tsx), [the shaders](src/components/sinapse/shaders.ts), [the geometry](src/components/sinapse/geometry.ts) and [the static artwork](src/components/sinapse/static-filaments.tsx). The twelve supplied captures in `.impeccable/review/` were opened as visual evidence: desktop, mobile, about, reef, project, spectrum, contact, reduced, mobile-work, mobile-project, mobile-contact and fallback. The selected composition and seed (`0285d2ea`) remain in [the direction contract](docs/implementation.md).
 
-The [finish verdict](docs/finish-verdict.md) clears S1–S3 from the [finish review](docs/finish-review.md); its ship disposition is restricted to those corrections. This document records the resulting system and does not certify temporal contrast, physical-device frame rate, 60 fps or the Lighthouse 90+ target. Sinapse remains one of the three authorized versions awaiting the user's comparison.
+The [finish verdict](docs/finish-verdict.md) clears S1–S3 from the [finish review](docs/finish-review.md); its ship disposition is restricted to those corrections. This document records the resulting system and does not certify temporal contrast, physical-device frame rate, 60 fps or the Lighthouse 90+ target. On 2026-09-10 the user chose Sinapse as the preferred direction, retaining Abisso's `bdm.` wordmark; this targeted identity change leaves the material world and navigation intact.
 
 ## Colors
 
@@ -284,7 +284,7 @@ All new visible artwork is procedural geometry or authored SVG. The inherited ap
 
 ### Identity and chapter navigation
 
-A fine inline conductor mark precedes the small `demasi.dev` wordmark. Desktop links have a one-pixel phosphor underline that reveals on hover and `aria-current="location"`. On mobile those links form the bottom rail. The wordmark's accessible name includes its complete visible text and the return-to-surface action.
+The compact `bdm.` wordmark adopts Abisso's Archivo lettering: weight 650, 28px desktop / 27px mobile, line-height 1, tracking -.04em and 12px vertical padding. Its point uses Abisso's sea-glass green (#97e8c4), while the letters retain Sinapse's pale foreground. This replaces the earlier conductor icon and `demasi.dev` label at the user's request on 2026-09-10. Desktop links keep their one-pixel phosphor underline on hover and `aria-current="location"`; on mobile they remain in the bottom rail. The wordmark preserves magnetic interaction, visible keyboard focus and an accessible name including `bdm.` and the return-to-surface action.
 
 ### Motion control and formation status
 

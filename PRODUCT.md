@@ -28,7 +28,7 @@ Visitantes do portfólio em desktop e dispositivos móveis. Público prioritári
 - Manter o nome e a copy real em inglês; não traduzir nem gerar nova bio sem solicitação.
 - Derivar a paleta da identidade publicada: preto quase absoluto e verde, levando-a à iridescência.
 - Organismo que respira, percebe o visitante e se reorganiza com a profundidade; câmera contínua, cursor com inércia, grotesca variável de grande escala e mono técnica pequena.
-- Sinapse líquida, Abisso e Membrana estão autorizadas para implementação em worktrees separadas. A escolha da versão final acontecerá após a comparação das três aplicações funcionais; não há outra etapa de aprovação antes de codar.
+- Sinapse líquida, Abisso e Membrana foram implementadas em worktrees separadas para comparação. Em 10 de setembro de 2026, o usuário preferiu Sinapse líquida e pediu nela a marca `bdm.` de Abisso. Sinapse é a direção escolhida para os próximos refinamentos; as outras alternativas e o aplicativo original permanecem preservados.
 
 ## Evidence on Hand
 

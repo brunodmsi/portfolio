@@ -242,9 +242,8 @@ export function Portfolio() {
       <div ref={cursor} className="magnetic-cursor" aria-hidden="true" />
 
       <header className="site-header flex items-center justify-between">
-        <a className="identity flex items-center gap-3" href="#surface" aria-label="demasi.dev — Bruno De Masi, back to surface" data-magnetic>
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M3 22 10 6l8 16L25 6M7 14h15" stroke="currentColor" strokeWidth="1.5" /></svg>
-          <span>demasi.dev</span>
+        <a className="identity" href="#surface" aria-label="bdm. — Bruno De Masi, back to surface" data-magnetic>
+          bdm<span aria-hidden="true">.</span>
         </a>
         <nav aria-label="Main navigation" className="desktop-nav flex items-center gap-8">
           {chapters.slice(1).map(({ id, label }, i) => <a key={id} href={`#${id}`} aria-current={chapter === i + 1 ? "location" : undefined} data-magnetic>{label}</a>)}
