@@ -1,6 +1,6 @@
 # Comparação das três experiências
 
-O usuário autorizou implementar as três direções em worktrees próprias e escolher depois. O checkout original permanece na branch `main`; os experimentos preexistentes em `previews/` não fazem parte destas implementações.
+O usuário autorizou implementar as três direções em worktrees próprias e escolher depois. Em 10 de setembro de 2026, preferiu **Sinapse líquida**, com a marca `bdm.` de Abisso no cabeçalho. Essa mudança pontual está na worktree Sinapse; não importa o restante da direção Abisso. O aplicativo original permanece na branch `main`; os experimentos preexistentes em `previews/` não fazem parte destas implementações.
 
 | Direção | Identidade | Worktree / branch | Preview |
 | --- | --- | --- | --- |
