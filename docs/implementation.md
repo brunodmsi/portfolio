@@ -8,7 +8,7 @@ THESIS: A portfolio as a conducting nervous system; exploration tightens a conti
 
 OWN-WORLD: Almost-black, phosphor green, silver and refracted cyan. Open junctions, hairline circuits, compressed variable grotesque, no card grid.
 
-STORY: Name becomes current, current reveals biography, four material junctions hold projects, language particles orbit, contact closes the circuit.
+STORY: Name becomes current, current reveals biography, an optional playable traversal conducts the visitor through the fibers, language particles orbit, contact closes the circuit.
 
 FIRST VIEWPORT: Monumental two-line name at the left and lower edge, an asymmetric silver-green filament organism crossing the upper right, small positioning line, bottom-left exploration link.
 
@@ -21,3 +21,5 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 Code-native procedural geometry; no new shipping raster artwork. Existing app icons are inherited assets from the original repository. Native HTML is the content authority. Animated rendering is progressive enhancement. No live data, generated biography, generated project prose, credential requirement, or email submission.
 
 Final production build and independent rendered finish review are coordinated by the root agent after this implementation handoff.
+
+The user-approved replacement of project entries with O Condutor is bounded by [condutor.md](condutor.md). Original project data remains documented in archaeology and Git history, not listed or disguised as game objects.

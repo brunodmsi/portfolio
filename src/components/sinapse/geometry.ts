@@ -1,4 +1,4 @@
-import { BufferGeometry, CatmullRomCurve3, TorusGeometry, TubeGeometry, Vector3 } from "three";
+import { BufferGeometry, CatmullRomCurve3, TubeGeometry, Vector3 } from "three";
 import { mergeGeometries } from "three/examples/jsm/utils/BufferGeometryUtils.js";
 
 function mergeAndDispose(parts: BufferGeometry[]) {
@@ -51,52 +51,6 @@ export function createSpine(low: boolean) {
       new Vector3(5 + d * 3, -40, -3), new Vector3(4 + d, -49, 1), new Vector3(-3 + d, -56, -2),
     ];
     parts.push(new TubeGeometry(new CatmullRomCurve3(points), low ? 170 : 260, i % 4 === 0 ? .028 : .012, 4, false));
-  }
-  return mergeAndDispose(parts);
-}
-
-export function createNode(index: number, low: boolean) {
-  const parts: BufferGeometry[] = [];
-  if (index === 0) {
-    for (let i = 0; i < 9; i++) {
-      const points: Vector3[] = [];
-      for (let j = 0; j <= 110; j++) {
-        const t = j / 110 * Math.PI * 2;
-        const radius = 1 + Math.cos(3 * t) * .28;
-        points.push(new Vector3(radius * Math.cos(2 * t), radius * Math.sin(2 * t), Math.sin(3 * t) * .43 + (i - 4) * .055));
-      }
-      parts.push(new TubeGeometry(new CatmullRomCurve3(points, true), low ? 95 : 150, .022 + i * .001, 5, true));
-    }
-  } else if (index === 1) {
-    for (let i = 0; i < 12; i++) {
-      const points: Vector3[] = [];
-      const phase = i * Math.PI * 2 / 12;
-      for (let j = 0; j <= 72; j++) {
-        const t = j / 72;
-        const angle = t * Math.PI * 3 + phase;
-        const radius = .42 + Math.sin(t * Math.PI) * .26;
-        points.push(new Vector3(Math.cos(angle) * radius, (t - .5) * 3, Math.sin(angle) * radius));
-      }
-      parts.push(new TubeGeometry(new CatmullRomCurve3(points), low ? 60 : 90, .025, 5, false));
-    }
-  } else if (index === 2) {
-    for (let i = 0; i < 9; i++) {
-      const ring = new TorusGeometry(1 + i * .025, .018, 5, 4);
-      ring.rotateZ(Math.PI / 4);
-      ring.rotateY(i / 9 * Math.PI);
-      ring.rotateX(.3);
-      parts.push(ring);
-    }
-  } else {
-    for (let i = 0; i < 13; i++) {
-      const points: Vector3[] = [];
-      for (let j = 0; j <= 90; j++) {
-        const t = j / 90 * Math.PI * 2;
-        const twist = (i - 6) * .085;
-        points.push(new Vector3(Math.cos(t) * 1.6, Math.sin(t) * (.45 + i * .02), Math.sin(t * 2) * .28 + Math.cos(t) * twist));
-      }
-      parts.push(new TubeGeometry(new CatmullRomCurve3(points, true), low ? 60 : 100, .016 + (i % 3) * .006, 5, true));
-    }
   }
   return mergeAndDispose(parts);
 }

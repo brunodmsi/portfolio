@@ -1,14 +1,12 @@
 "use client";
 
-/* eslint-disable react-hooks/immutability -- Three.js uniforms and scene objects are an imperative render graph updated in useFrame, not React state. */
-
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Environment, Lightformer } from "@react-three/drei";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
 import { BlendFunction, Effect } from "postprocessing";
 import { Component, Suspense, useCallback, useEffect, useMemo, useRef, useState, type ReactNode, type RefObject } from "react";
 import { Color, Group, Mesh, PerspectiveCamera, ShaderMaterial, Uniform, Vector2, Vector3, DoubleSide, ACESFilmicToneMapping, BufferAttribute, BufferGeometry } from "three";
-import { createFilaments, createNode, createOrbit, createPortal, createSpine } from "./geometry";
+import { createFilaments, createOrbit, createPortal, createSpine } from "./geometry";
 import { filamentFragment, filamentVertex, finishFragment } from "./shaders";
 import type { WorldInput } from "./types";
 
@@ -19,7 +17,6 @@ type WorldProps = {
   onUnavailable: (reason?: "unavailable" | "context-lost") => void;
   onBudgetFallback: () => void;
   onQuality: (quality: string) => void;
-  onProject: (project: number) => void;
 };
 
 class WorldBoundary extends Component<{ children: ReactNode; onUnavailable: () => void }, { failed: boolean }> {
@@ -60,7 +57,7 @@ function screenToWorld(x: number, y: number, camera: PerspectiveCamera, width: n
   return result.copy(camera.position).addScaledVector(direction, distance);
 }
 
-function CameraJourney({ input, nodePositions }: { input: RefObject<WorldInput>; nodePositions: RefObject<Vector3[]> }) {
+function CameraJourney({ input }: { input: RefObject<WorldInput> }) {
   const { camera, size } = useThree();
   const look = useRef(new Vector3(0, 0, 0));
   const destination = useMemo(() => new Vector3(), []);
@@ -71,16 +68,9 @@ function CameraJourney({ input, nodePositions }: { input: RefObject<WorldInput>;
     progress.current += (state.progress - progress.current) * (1 - Math.exp(-delta * 5));
     const p = progress.current;
     const mobile = size.width < 650;
-    if (state.project !== null) {
-      const point = nodePositions.current[state.project];
-      const horizontal = mobile ? 0 : 2.4;
-      target.copy(point).add(new Vector3(horizontal, mobile ? -1.9 : 0, 0));
-      destination.copy(point).add(new Vector3(horizontal, mobile ? -1.9 : .2, mobile ? 8.5 : 8.4));
-    } else {
-      destination.set(mobile ? 1.25 : Math.sin(p * .6) * .4, -p * 12, mobile ? 18.7 : 18.4 - p * .22);
-      target.set(mobile ? 1.25 : 0, -p * 12, 0);
-    }
-    const easing = 1 - Math.exp(-delta * (state.project === null ? 4 : 3.3));
+    destination.set(mobile ? 1.25 : Math.sin(p * .6) * .4, -p * 12, mobile ? 18.7 : 18.4 - p * .22);
+    target.set(mobile ? 1.25 : 0, -p * 12, 0);
+    const easing = 1 - Math.exp(-delta * 4);
     camera.position.lerp(destination, easing);
     look.current.lerp(target, easing);
     camera.lookAt(look.current);
@@ -117,50 +107,6 @@ function Organism({ input, low }: { input: RefObject<WorldInput>; low: boolean }
   </>;
 }
 
-const nodeColors = ["#abc4b9", "#35c666", "#5c95c9", "#c4ded3"];
-
-function ProjectNode({ index, input, low, positions, onProject }: { index: number; input: RefObject<WorldInput>; low: boolean; positions: RefObject<Vector3[]>; onProject: (index: number) => void }) {
-  const group = useRef<Group>(null);
-  const object = useRef<Group>(null);
-  const { camera, size } = useThree();
-  const geometry = useMemo(() => createNode(index, low), [index, low]);
-  const shader = useMemo(() => material(nodeColors[index], index === 1 ? .28 : .12, index === 2 ? 1 : .65, low), [index, low]);
-  const scale = useRef(1);
-  useEffect(() => () => geometry.dispose(), [geometry]);
-  useEffect(() => () => shader.dispose(), [shader]);
-  useFrame(() => {
-    const node = group.current;
-    if (!node || !object.current) return;
-    const time = performance.now() / 1000;
-    const anchor = input.current.projectAnchors[index];
-    if (input.current.project === null && anchor) {
-      screenToWorld(anchor.left + anchor.width / 2, anchor.top + anchor.height * .46, camera as PerspectiveCamera, size.width, size.height, positions.current[index]);
-      scale.current = Math.min(1.55, anchor.height / size.height * (2 * camera.position.z * Math.tan((camera as PerspectiveCamera).fov * Math.PI / 360)) / 4.4);
-    }
-    node.position.copy(positions.current[index]);
-    node.scale.setScalar(scale.current);
-    node.visible = input.current.project !== null ? input.current.project === index : !!anchor && anchor.bottom > -100 && anchor.top < size.height + 100;
-    object.current.rotation.y = time * [ .09, .19, .075, .04 ][index];
-    object.current.rotation.z = index === 1 ? -.32 : index === 3 ? -.4 + Math.sin(time * .2) * .06 : Math.sin(time * .1 + index) * .08;
-    object.current.rotation.x = index === 0 ? .35 : index === 3 ? .3 : .15;
-    updateMaterial(shader, input.current, time, .25);
-    shader.uniforms.uGlow.value = input.current.project === index ? .3 : index === 1 ? .22 : .1;
-  });
-  return <group ref={group} onClick={(event) => {
-    if ((event.nativeEvent.target as Element)?.closest?.("dialog")) return;
-    event.stopPropagation();
-    onProject(index);
-  }}>
-    <group ref={object}>
-      <mesh geometry={geometry} material={shader} />
-      {index === 2 && <mesh rotation={[.4,.5,.25]}>
-        <octahedronGeometry args={[.86,0]} />
-        {low ? <meshStandardMaterial color="#41696f" metalness={.8} roughness={.2} /> : <meshPhysicalMaterial color="#91c9b2" transmission={.76} thickness={1.2} ior={1.45} roughness={.1} metalness={.05} iridescence={.8} iridescenceIOR={1.36} envMapIntensity={1.6} />}
-      </mesh>}
-    </group>
-  </group>;
-}
-
 function LanguageOrbits({ input, low }: { input: RefObject<WorldInput>; low: boolean }) {
   const { camera, size } = useThree();
   const group = useRef<Group>(null);
@@ -180,14 +126,14 @@ function LanguageOrbits({ input, low }: { input: RefObject<WorldInput>; low: boo
       if (mesh) {
         screenToWorld(anchor.left + 9, anchor.top + anchor.height / 2, camera as PerspectiveCamera, size.width, size.height, mesh.position);
         mesh.scale.setScalar(input.current.language === index ? 1.7 : 1);
-        mesh.visible = input.current.project === null && anchor.top < size.height && anchor.bottom > 0;
+        mesh.visible = anchor.top < size.height && anchor.bottom > 0;
       }
     });
     screenToWorld((minX + maxX) / 2, (minY + maxY) / 2, camera as PerspectiveCamera, size.width, size.height, point);
     group.current.position.copy(point);
     const ratio = 2 * camera.position.z * Math.tan((camera as PerspectiveCamera).fov * Math.PI / 360) / size.height;
     group.current.scale.set((maxX - minX) * ratio * .53, (maxY - minY) * ratio * .52, 1);
-    group.current.visible = minY < size.height && maxY > 0 && input.current.project === null;
+    group.current.visible = minY < size.height && maxY > 0;
     updateMaterial(shader, input.current, performance.now() / 1000, .15);
   });
   return <>
@@ -297,17 +243,15 @@ function FrameBudget({ low, visible, onDecline, onPromote, onExhausted }: {
   return null;
 }
 
-function Scene({ input, low, onProject, onReady }: { input: RefObject<WorldInput>; low: boolean; onProject: (index: number) => void; onReady: () => void }) {
-  const positions = useRef(Array.from({ length: 4 }, (_, i) => new Vector3(i % 2 ? 3 : -3,-25-Math.floor(i/2)*5,0)));
+function Scene({ input, low, onReady }: { input: RefObject<WorldInput>; low: boolean; onReady: () => void }) {
   const { gl } = useThree();
   const frames = useRef(0);
   useFrame(() => { if (++frames.current === 3) { gl.domElement.setAttribute("data-ready", "true"); onReady(); } });
   return <>
-    <CameraJourney input={input} nodePositions={positions} />
+    <CameraJourney input={input} />
     <ambientLight intensity={.55} color="#74a98b" />
     <directionalLight position={[3,7,9]} intensity={2} color="#d9f8e8" />
     <Organism input={input} low={low} />
-    {Array.from({ length: 4 }, (_, index) => <ProjectNode key={index} index={index} input={input} low={low} positions={positions} onProject={onProject} />)}
     <LanguageOrbits input={input} low={low} />
     <SuspendedParticles low={low} />
     {!low && <><Environment resolution={64} frames={1}><Lightformer intensity={4} color="#c2f1d6" position={[0,5,-2]} scale={[12,2,1]} /><Lightformer intensity={2} color="#326c77" position={[-5,1,0]} rotation={[0,Math.PI/2,0]} scale={[3,10,1]} /></Environment><Lens /></>}
@@ -371,5 +315,5 @@ export default function World(props: WorldProps) {
       gl.domElement.addEventListener("webglcontextlost", lost, { once: true });
       detachContextListener.current = () => gl.domElement.removeEventListener("webglcontextlost", lost);
     }}
-  ><Suspense fallback={null}><FrameBudget low={low} visible={visible} onDecline={lowerQuality} onPromote={raiseQuality} onExhausted={props.onBudgetFallback} /><Scene input={props.input} low={low} onProject={props.onProject} onReady={props.onReady} /></Suspense></Canvas></WorldBoundary>;
+  ><Suspense fallback={null}><FrameBudget low={low} visible={visible} onDecline={lowerQuality} onPromote={raiseQuality} onExhausted={props.onBudgetFallback} /><Scene input={props.input} low={low} onReady={props.onReady} /></Suspense></Canvas></WorldBoundary>;
 }

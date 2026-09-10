@@ -1,0 +1,12 @@
+## verdict
+
+- **F1 — resolved.** `emitPulse` restores stage focus with `preventScroll`. The refreshed `verification.json` records desktop click-Pulse → WASD passing; the parent reports actual touch stick → Pulse → stick without an automation focus repair. The same play/pulse captures retain the controls and stage composition.
+- **F2 — partial after final batch 2.** Batch 1 closed the dot but left broken rectangular fragments at the b/d stem/bowl joins. The latest `desktop-play.png`, `desktop-connection.png`, `desktop-complete.png`, `mobile-play.png` and `mobile-pulse.png` now show continuous filaments through those joins: the rectangular fragments are resolved. Both completion captures retain a closed dot. The final correction, however, introduces a solid pale triangular fill outside the rounded lower filaments at the repaired b/d corners. It is conspicuous at the lower-left b corner in `mobile-play.png` (approximately x295–367, y1045–1093 in the 780 × 1688 image) and `mobile-pulse.png` (approximately x283–367, y1170–1243), with corresponding pale outer-corner fills visible in `desktop-complete.png`. The join's stripe continuity is repaired, but the new exposed fill keeps the material finding partial.
+- **F3 — resolved.** `desktop-entry.png` and `mobile-entry.png` now show Continue without playing beside/below Play in the same viewport. `reduced.png` shows Continue exploring with the still invitation. The original post-stage continuation remains.
+- **Regression introduced by batch 2:** the pale lower-corner fill described under F2. No other regression is added to this scoped verdict. All eleven named capture paths were reopened after the final batch and remain valid; this is a scoped verdict, not a new full review. F1/F3 retain their resolved status and the parent reports their real-input regressions passing again.
+
+## remaining
+
+F2 only: the solid pale fill extending beyond the rounded filament pattern at the lower b/d corners remains visible. Source inspection points to the shared-distance coordinate clamping to the outer stripe across the miter area, which also saturates the edge term; a future correction must preserve the continuous join without painting that exterior area as a solid highlight. The dot wedge and original rectangular overlap fragments are resolved. F1 and F3 need no further change. Both allowed fix batches are exhausted: report this remaining visual defect to the user rather than continue unattended polishing.
+
+disposition: fix

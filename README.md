@@ -1,6 +1,8 @@
-# Sinapse líquida
+# Sinapse líquida — O Condutor
 
-Bruno De Masi's portfolio as a conducting bundle of wet optical fibers. This is the isolated comparative implementation on branch `experience/sinapse`; it does not replace the original workspace or choose a final concept.
+This is the selected Sinapse implementation for Bruno De Masi’s portfolio. The former project-list surface at `#reef` is now **O Condutor**: a short, optional walking game that repairs three connections and resolves into the `bdm.` mark. The portfolio’s real biography, organisations, language list, and contact links remain ordinary HTML; the game does not invent project case studies or require completion.
+
+Playable preview; the earlier lower-corner fill remains as described in the [scoped verdict](docs/condutor-finish-verdict.md). Base-game performance measurements and their limits are in [verification](docs/condutor-verification.md); the later light-gamification checks are in [sparks verification](docs/sparks-verification.md). The design-system record has not yet been refreshed for the game.
 
 ## Run
 
@@ -9,80 +11,78 @@ npm ci
 npm run dev -- --hostname 0.0.0.0 --port 3101
 ```
 
-Open `http://localhost:3101`. No environment variables or external data services are required. The exact editorial snapshot lives in `src/lib/portfolio.ts` and is traced to `docs/archaeology.md`. Contact uses real email and social links; nothing is sent by the application.
+Open `http://localhost:3101`. No environment variables, account, external data service, or audio are required.
 
 ```bash
 npm run lint
 npx tsc --noEmit
 npm run build
 npm start -- --hostname 0.0.0.0 --port 3101
+node --experimental-strip-types scripts/conductor-engine.test.mjs
 ```
 
-Next 16.3.4 and React 19.2.3 are kept compatible with React Three Fiber 9.7.0. Three 0.186.0 is inside postprocessing 6.39.5's supported peer range. Fonts are self-hosted npm assets, so builds do not fetch Google Fonts.
+Next 16.3.4, React 19.2.3, React Three Fiber 9.7.0, and Three 0.186.0 are used locally. Fonts are self-hosted npm assets; a build does not fetch Google Fonts.
 
 ## Folder map
 
 ```text
 src/app/
-  page.tsx                    Server entry; semantic content is prerendered
-  layout.tsx                  Existing metadata and local variable fonts
-  globals.css                 Editorial type, layout, responsive and static states
-src/lib/portfolio.ts           Frozen biography, projects, languages and real links
+  page.tsx                    Server entry
+  layout.tsx                  Metadata and local variable fonts
+  globals.css                 Editorial layout, responsive and still states
+src/lib/portfolio.ts          Frozen biography, languages, organisations and real links
 src/components/sinapse/
-  portfolio.tsx               HTML journey, native dialog, motion preference, Lenis
-  world.tsx                   Persistent canvas, camera, quality and context lifecycle
-  geometry.ts                Merged procedural tubes and four material junctions
-  shaders.ts                 Commented GLSL and custom optical finishing pass
-  static-filaments.tsx       Code-native fallback artwork and project silhouettes
-  types.ts                   Mutable renderer input contract
+  portfolio.tsx               HTML portfolio, motion preference and game hand-off
+  world.tsx                   Progressive ambient filament renderer
+  geometry.ts                 Procedural background geometry
+  shaders.ts                  Ambient renderer shaders
+  static-filaments.tsx        Code-native static background artwork
+  types.ts                    Ambient renderer input contract
+src/components/conductor/
+  engine.ts                   Import-free walking, collision, gates and level geometry
+  collectibles.tsx             Seven instanced sparks and their pickup motion
+  experience.tsx              Accessible stage, controls, pause and static study
+  world.tsx                   Explicitly loaded game canvas and its frame budget
+  shaders.ts                  Ribbon and footprint shaders; no full-screen pass
+  character.tsx               Mercury walker geometry and gait
+  metal.ts                    Procedural walker material
+scripts/
+  conductor-engine.test.mjs   Node type-stripping tests for the simulation
 docs/
-  archaeology.md             Factual inventory and editorial limits
-  concepts.md                Three authorized comparison directions
-  implementation.md         Direction contract and review boundary
-  assets.md                  Asset provenance
-public/licenses.txt          Shader-source attribution and font licenses
+  archaeology.md              Factual source inventory and editorial limits
+  condutor.md                 Approved O Condutor direction contract
+  assets.md                   Asset provenance
 ```
 
-## Journey and controls
+## O Condutor
 
-Surface, About, Work, Languages and Contact are native HTML anchors. Desktop wheel scrolling receives Lenis smoothing; touch scrolling stays native. Pointer movement tensions nearby fibers. A press sends an impulse along the bundle, followed by a softer delayed return. Navigation and all essential content remain available before the WebGL module loads.
+The stage is available as a geometric still study before the game WebGL canvas. The game canvas loads only after an explicit **Play the Conductor** action. A falling mercury drop forms into a walker, then the visitor follows authored `b`, `d`, `m`, and dot paths. A pulse beside each next gate restores its bridge; all three gates must be repaired in order. Completion raises the camera to the `bdm.` plan.
 
-The four project junctions have different geometry and behavior: Buggy is a silver knot, wt a green helical cable, pi-platform a cobalt crystalline cage, and Flight Tracker a broad pearl orbit. Their accessible `Inspect …` and `Open … details` buttons move the camera into the selected junction and open a native HTML dialog. Escape, the backdrop, Close, and Return restore the view and initiating focus. The dialog makes the background inert, with explicit Tab/Shift+Tab wrapping to keep focus inside its controls. Project descriptions are the exact original copy; pi-platform has no invented description. Direct destination links also remain visible outside the dialog.
+The game is focused within its play area. Controls are native and optional:
 
-The twelve named language particles can be illuminated by touch, pointer, or keyboard. Their placement is compositional: it does not encode proficiency, ordering, hierarchy or dependencies. The four organizations are listed without inferred employer or client claims.
+- WASD or arrow keys walk; Space sends a pulse.
+- Touch uses the on-stage stick and **Pulse** button.
+- Pause is explicit; window blur, a hidden tab, leaving the stage, or moving focus away pauses as well. Resume is explicit.
+- Escape exits to the page. Normal page scrolling and every non-game link remain available.
 
-## Shader notes
+Seven loose sparks now sit on the existing route. Walking into a live spark collects it automatically, once per run. Collecting all seven gives the mercury walker a crooked halo and the honorary title **Employee of the void. Salary: absolutely nothing.** It is purely cosmetic: no new button, speed bonus, score, countdown, account or required collection. The halo appears before the final connection, so walking continues with it equipped. **Walk again** resets the collection and reward; nothing is saved or sent elsewhere.
 
-`shaders.ts` documents each stage inline. The 3D simplex lattice adapts the MIT-licensed Ashima/Gustavson implementation; its full attribution is preserved in `public/licenses.txt`. A central-difference curl of the vector potential `(n,n,n)` creates a low-cost divergence-free displacement field. This is a deliberately economical curl construction, not a fluid solver.
+Pickups use two instanced draw calls and a short simulation-timed arc; the award reuses the character's existing geometry. Pausing also freezes the pickup/halo motion. The native counter and polite announcements expose collection status without moving focus. No extra rendering pass, texture, sound, library or backend was added.
 
-Balanced vertex deformation combines the curl field, low-frequency movement, scroll phase, and pointer attraction. The compiled `LOW_QUALITY` shader uses one simplex sample and reuses it for optical variation, replacing the balanced shader's seven simplex evaluations per vertex. It keeps the same geometry family, pointer tension, pulse, Fresnel and thin-film treatment. The fragment shader uses angular Fresnel reflectance, a softbox-like procedural environment, wavelength-inspired RGB interference, and an absorbed refracted ray. This is an artistic thin-film/environment approximation rather than spectral path tracing. On the balanced tier, pi-platform additionally uses Three's physical transmission material and a small locally rendered environment.
+Reduced motion starts with the still study and no game canvas. A visitor can enable motion before playing. A WebGL creation/context failure or the game’s budget fallback leaves the still study available with a manual retry; no essential portfolio content depends on the canvas.
 
-A single conducting impulse travels along each tube's longitudinal UV coordinate, then returns more slowly at lower intensity. The finishing pass keeps grain and small chromatic offsets at the edge of the WebGL image. HTML text is composed afterward and remains sharp. Restrained bloom is present only on the balanced tier.
+While the game is mounted, it owns the only live canvas: the ambient Sinapse background is unmounted, along with its continuous input and scroll work. Exiting starts a fresh ambient-renderer attempt when motion remains enabled.
 
-## Performance and fallbacks
+## Game rendering budget and fallbacks
 
-| Tier | Rendering budget |
-| --- | --- |
-| Balanced desktop | DPR 1.4; 46 hero strands × 138 segments; 13 spine strands; 360 suspended particles; half-resolution bloom and one combined grain/fringe pass; one physical transmission node |
-| Low/startup/mobile | DPR 1; 22 hero strands × 72 segments; 7 spine strands; 130 particles; one simplex sample per vertex; no postprocessing or transmission; lower node geometry |
-| Still / unavailable / exhausted budget | No canvas; static procedural SVG and full semantic HTML; no ongoing animation |
+The game starts at DPR 1 on desktop and mobile. Small viewports use lower character geometry without reducing the initial pixel resolution. A sustained frame-budget overrun selects DPR 0.7 and the low character setting: fewer lathe, capsule, sphere, torus, and bead segments, plus the lower-cost procedural metal shader. The canvas uses no antialiasing and the game has no postprocessing, environment pass, shadow map, or external texture.
 
-Every device starts low. Desktop can earn one promotion to balanced after 2.2 seconds of uninterrupted measured frame intervals at or below 18.5 ms. This is measured headroom, not a fixed loading delay or an interaction gate. The full HTML/SVG composition is visible immediately, and the canvas remains transparent until its first three frames have rendered. Geometry and objects keep the same layout in both animated tiers.
+The game checks visible wall-clock windows only after a warm-up period. A sustained expensive window first selects the low setting; another sustained expensive window stops the canvas and offers the still edition. This is a protective fallback, not a measured frame-rate claim.
 
-The elapsed-time watchdog samples raw `performance.now()` intervals while the tab is visible. A one-second window averaging over 25 ms reduces balanced to low; over 40 ms in low enters `still-budget`. There is no minimum frame count before evaluation. Severe intervals over 120 ms accumulate toward a 350 ms early-exit budget, so a single sufficiently long interval can trigger the exit. Healthy intervals drain that severe budget. Samples reset across tier and visibility changes, with only the first draw treated as compilation warmup. A GL call already in flight cannot be interrupted, so these are detection budgets rather than a promise that a blocking frame can be preempted. After a decline there is no automatic re-promotion; budget exhaustion has no automatic retry.
+If the low setting needs roughly another half-budget reduction, preserve the readable path silhouette and reduce authored detail in this order: halve ribbon cross-strips (8 to 4), dust points (180 to 90), retained footprints (96 to 48), and pulse-ring segments (80 to 40). Those are proposed cuts, not measurements. Do not remove the still study, controls, or native portfolio content.
 
-Tubes are merged into a small number of draw calls, buffers/materials are disposed on tier changes, and the camera moves through a single persistent world. All project objects are still constructed in the current bounded implementation; section-based resource loading has not been added. Hidden tabs stop the canvas, desktop scrolling, and cursor loops. The watchdog uses no user-agent, webdriver, GPU-vendor, or Lighthouse detection.
+## Historical context
 
-`prefers-reduced-motion` starts in the still composition without loading the world. The Motion control allows an explicit override, saved locally when storage is available. A renderer creation failure, lost WebGL context, or exhausted budget changes the **effective** mode to still, unmounts the canvas, cancels Lenis/cursor/pointer animation helpers, and displays a truthful still-state hint plus `Retry motion`. It preserves the HTML details, focus behavior, navigation, links, and static artwork. Failures never overwrite the visitor's saved preference; only an explicit control press saves a choice or retries the scene. A late frame callback cannot reactivate a failed renderer.
+The initial request asked for three comparative worktrees and a project-browsing experience. That request is retained as history in the archaeology and earlier documentation; it is not the active delivery requirement for this selected Sinapse worktree. The active requirement is the approved O Condutor replacement at `#reef`.
 
-At half the balanced GPU budget, use the existing low tier: its DPR change alone cuts rendered pixels by about 49%, with no transmission/bloom and one rather than seven simplex evaluations per vertex. If a further cut is needed, remove the second biography bundle and split the long spine for tighter culling while retaining the silhouette, camera navigation and HTML project inspection. The existing terminal still state keeps the page usable when low is already too expensive. Avoid cutting the semantic fallback or making text depend on rendering quality.
-
-60 fps on a medium laptop and Lighthouse 90+ are targets, not measured claims. Headless software WebGL establishes behavior, not physical-device GPU performance. The root agent coordinates the production build and independent common review across all three concepts.
-
-## Diagnostics
-
-The root `.sinapse` exposes `data-mode` for the effective mode; `data-renderer` (`static`, `loading`, `ready`, `unavailable`, `context-lost`, `still-budget`); `data-motion-reason` (`preference`, `enabled`, `renderer`, `performance`); `data-scene-ready`; `data-quality`; and `data-pointer`. `still-budget` remains a distinct reported cause rather than being disguised as missing WebGL. The canvas receives `data-ready="true"` after its first three frames. These machine-readable values are not visible implementation copy.
-
-The identity's accessible name begins with its visible `demasi.dev` label. Motion names contain the complete current visible text: `Motion on — pause animation`, `Motion off — enable animation`, or `Retry motion — try animation again` after a failed attempt. No motion hint invites a pulse while the renderer is loading or unavailable.
-
-Final production measurements, test scope and limitations are recorded in [docs/verification.md](docs/verification.md). The independent [finish verdict](docs/finish-verdict.md) resolves S1–S3 at the named-fix scope. Local screenshots and audit reports remain in `.impeccable/review/`; the actual design system is documented in `DESIGN.md` and `.impeccable/design.json`.
+Historical verification and finish-review files are retained as records. They do not state a current O Condutor score or substitute for fresh production measurement.

@@ -20,17 +20,3 @@ export function StaticFilaments() {
     </svg>
   );
 }
-
-export function StaticNode({ index }: { index: number }) {
-  return (
-    <svg className={`static-node static-node-${index}`} viewBox="0 0 240 240" fill="none" aria-hidden="true">
-      {Array.from({ length: 18 }, (_, i) => {
-        const angle = i * 10;
-        if (index === 0) return <ellipse key={i} cx="120" cy="120" rx={70 - i * 1.9} ry="68" transform={`rotate(${angle} 120 120)`} stroke="currentColor" opacity={.25 + i * .03} />;
-        if (index === 1) return <path key={i} d={`M ${60 + i * 3} 202 C ${185 - i * 2} 160, ${40 + i * 2} 85, ${135 + i * 2} 28`} stroke="currentColor" opacity={.3 + i * .03} />;
-        if (index === 2) return <rect key={i} x={55 + i * 1.8} y={55 + i * 1.8} width={130 - i * 3.6} height={130 - i * 3.6} transform={`rotate(${32 + i * 2} 120 120)`} stroke="currentColor" opacity={.3 + i * .02} />;
-        return <ellipse key={i} cx="120" cy="120" rx="99" ry={22 + i * 2} transform={`rotate(${-32 + i * 1.4} 120 120)`} stroke="currentColor" opacity={.25 + i * .03} />;
-      })}
-    </svg>
-  );
-}
