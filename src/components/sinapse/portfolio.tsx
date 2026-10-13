@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import { ArrowDown, ArrowUp, ArrowUpRight, Pause, Play } from "lucide-react";
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore, type CSSProperties } from "react";
-import { biography, chapters, languagePositions, languages, organizations, socials } from "@/lib/portfolio";
+import { biography, chapters, company, languagePositions, languages, organizations, socials } from "@/lib/portfolio";
 import { StaticFilaments } from "./static-filaments";
 import { ConductorExperience } from "../conductor/experience";
 import type { WorldInput } from "./types";
@@ -255,7 +255,7 @@ export function Portfolio() {
         <h2 id="contact-heading">Get in<br /><span>touch.</span></h2>
         <a className="email-link flex items-center justify-between" href="mailto:bruno@demasi.dev" data-magnetic><span>bruno@demasi.dev</span><ArrowUpRight strokeWidth={1.2} /></a>
         <div className="social-links flex flex-wrap gap-x-10 gap-y-5">{socials.map(({ name, href }) => <a href={href} key={name} target="_blank" rel="noopener noreferrer" data-magnetic>{name}<ArrowUpRight size={17} /></a>)}</div>
-        <footer className="site-footer flex items-center justify-between"><span>Bruno De Masi</span><a href="#surface" className="flex items-center gap-3" data-magnetic>Back to surface<ArrowUp size={16} /></a></footer>
+        <footer className="site-footer flex items-center justify-between"><span className="site-company">Bruno De Masi<small>{company.name} · {company.registry} · {company.place}</small></span><a href="#surface" className="flex items-center gap-3" data-magnetic>Back to surface<ArrowUp size={16} /></a></footer>
       </section>
     </main>
 

@@ -9,6 +9,9 @@ export const languagePositions = [
   [12, 66], [35, 43], [55, 57], [58, 32], [31, 65], [82, 64],
 ] as const;
 
+/** Legal entity behind the work, shown in the footer (Apple Developer organization check). */
+export const company = { name: "De Masi Software Solutions and Services LTDA", registry: "CNPJ 50.096.490/0001-40", place: "Belém, Brazil" } as const;
+
 export const organizations = ["show-karma", "WormLayer", "orqbase", "The-RFP-Hub"] as const;
 export const socials = [
   { name: "GitHub", href: "https://github.com/brunodmsi" },
