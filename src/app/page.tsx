@@ -1,5 +1,5 @@
-import { Portfolio } from "@/components/sinapse/portfolio";
+import { CompanyHome } from "@/components/company/home";
 
 export default function Home() {
-  return <Portfolio />;
+  return <CompanyHome />;
 }
