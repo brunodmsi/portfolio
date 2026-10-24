@@ -13,7 +13,7 @@ const copy = {
   en: {
     lang: "PT",
     role: "Software engineer · Belém, Brazil",
-    bio: "I build tools that make everyday workflows smaller. Most of my work is in Rust and TypeScript, from command-line utilities to product code.",
+    bio: "I design and build reliable systems and tools. Most of my public code is TypeScript and JavaScript, with Python for scripts and Nix for reproducible environments.",
     trajectoryLabel: "Trajectory",
     educationLabel: "Education",
     contactLabel: "Contact",
@@ -40,7 +40,7 @@ const copy = {
   pt: {
     lang: "EN",
     role: "Engenheiro de software · Belém, Brasil",
-    bio: "Construo ferramentas que tornam o trabalho do dia a dia mais simples. Grande parte do meu trabalho é em Rust e TypeScript, de utilitários de linha de comando ao código de produto.",
+    bio: "Desenho e construo sistemas e ferramentas confiáveis. Grande parte do meu código público é TypeScript e JavaScript, com Python para scripts e Nix para ambientes reproduzíveis.",
     trajectoryLabel: "Trajetória",
     educationLabel: "Formação",
     contactLabel: "Contato",
