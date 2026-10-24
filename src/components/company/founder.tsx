@@ -13,7 +13,7 @@ const copy = {
   en: {
     lang: "PT",
     role: "Software engineer · Belém, Brazil",
-    bio: "I design and build reliable systems and tools. Most of my public code is TypeScript and JavaScript, with Python for scripts and Nix for reproducible environments.",
+    bio: "I design, build and improve reliable systems and tools, and I work with teams to see them through to delivery.",
     trajectoryLabel: "Trajectory",
     educationLabel: "Education",
     contactLabel: "Contact",
@@ -40,7 +40,7 @@ const copy = {
   pt: {
     lang: "EN",
     role: "Engenheiro de software · Belém, Brasil",
-    bio: "Desenho e construo sistemas e ferramentas confiáveis. Grande parte do meu código público é TypeScript e JavaScript, com Python para scripts e Nix para ambientes reproduzíveis.",
+    bio: "Projeto, construo e aprimoro sistemas e ferramentas confiáveis, e trabalho com equipes para levá-los até a entrega.",
     trajectoryLabel: "Trajetória",
     educationLabel: "Formação",
     contactLabel: "Contato",
