@@ -60,10 +60,10 @@ type Message = { name: string; email: string; company: string; message: string; 
 
 // MailerSend transactional API: https://developers.mailersend.com/api/v1/email.html
 // CONTACT_FROM_EMAIL must be a sender on a domain verified in MailerSend.
-// CONTACT_TO_EMAIL is where messages land (defaults to bruno@demasi.dev).
+// CONTACT_TO_EMAIL is where messages land (defaults to contact@demasi.dev).
 function sendWithMailerSend(apiKey: string, msg: Message) {
   const from = process.env.CONTACT_FROM_EMAIL ?? "";
-  const to = process.env.CONTACT_TO_EMAIL ?? "bruno@demasi.dev";
+  const to = process.env.CONTACT_TO_EMAIL ?? "contact@demasi.dev";
   const lines = [
     `Nome: ${msg.name}`,
     `E-mail: ${msg.email}`,
