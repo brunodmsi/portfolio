@@ -176,6 +176,7 @@ body:has(.company-home) {
 
 .founder-photo {
   margin: 0;
+  width: min(220px, 100%);
   aspect-ratio: 4 / 5;
   overflow: hidden;
   background: #e4e7df;
@@ -213,17 +214,40 @@ body:has(.company-home) {
   list-style: none;
 }
 
-.founder-trajectory li {
+.founder-trajectory > li {
   padding: 18px 0;
   border-top: 1px solid var(--green);
   font-size: clamp(22px, 2.4vw, 36px);
   letter-spacing: -.02em;
 }
 
-.founder-trajectory li:last-child { border-bottom: 1px solid var(--green); }
+.founder-trajectory > li:last-child { border-bottom: 1px solid var(--green); }
+
+.founder-org {
+  font-size: clamp(22px, 2.4vw, 36px);
+  letter-spacing: -.02em;
+  margin-bottom: 10px;
+}
+
+.founder-roles { margin: 0; padding: 0; list-style: none; }
+
+.founder-roles li {
+  display: flex;
+  border-top: 1px solid #d5d9d0;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 24px;
+  padding: 6px 0;
+  font-size: 16px;
+  color: var(--ink-soft);
+}
+
+.founder-period { font-family: var(--font-geist-mono), monospace; font-size: 13px; }
+
+.founder-block--edu .founder-trajectory > li { border-top-color: var(--mint); }
 
 @media (max-width: 900px) {
   .founder-intro { grid-template-columns: 1fr; gap: 32px; }
-  .founder-photo { max-width: 280px; }
+  .founder-photo { width: min(200px, 100%); }
   .founder-block { grid-template-columns: 1fr; gap: 16px; }
 }
