@@ -177,7 +177,7 @@ body:has(.company-home) {
 
 .founder-photo {
   margin: 0;
-  width: min(220px, 100%);
+  width: min(300px, 100%);
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   overflow: hidden;
@@ -192,7 +192,7 @@ body:has(.company-home) {
   object-position: 45% 30%;
 }
 
-.founder-name { font-size: clamp(44px, 5.6vw, 92px); }
+.founder-name { font-size: clamp(48px, 6.4vw, 110px); }
 
 .founder-role {
   margin-top: 18px;
@@ -207,7 +207,7 @@ body:has(.company-home) {
   display: grid;
   grid-template-columns: minmax(0, 3fr) minmax(0, 9fr);
   gap: 4vw;
-  padding: clamp(40px, 7vh, 88px) 0;
+  padding: clamp(28px, 4vh, 48px) 0;
 }
 
 .founder-trajectory {
@@ -250,6 +250,6 @@ body:has(.company-home) {
 
 @media (max-width: 900px) {
   .founder-intro { grid-template-columns: 1fr; gap: 32px; }
-  .founder-photo { width: min(200px, 100%); }
+  .founder-photo { width: min(240px, 100%); }
   .founder-block { grid-template-columns: 1fr; gap: 16px; }
 }
