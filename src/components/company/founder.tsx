@@ -6,28 +6,85 @@ import "./home.css";
 
 type Lang = "en" | "pt";
 
+type Role = { title: string; period: string };
+type Entry = { org: string; roles: Role[] };
+
 const copy = {
   en: {
     lang: "PT",
-    back: "DE MASI SOFTWARE",
-    role: "Senior software engineer · Belém, Brazil",
+    role: "Software engineer · Belém, Brazil",
     bio: "I build tools that make everyday workflows smaller. Most of my work is in Rust and TypeScript, from command-line utilities to product code.",
     trajectoryLabel: "Trajectory",
-    trajectory: ["Karma", "Terras", "CI&T"],
+    educationLabel: "Education",
     contactLabel: "Contact",
+    present: "present",
     switchLabel: "Português",
+    trajectory: [
+      { org: "Karma", roles: [{ title: "Software Engineer", period: "Sep 2025 – present" }] },
+      { org: "CI&T", roles: [{ title: "Full Stack Engineer", period: "Mar 2024 – Aug 2025" }] },
+      {
+        org: "Terras App Solutions",
+        roles: [
+          { title: "Senior Software Engineer", period: "Dec 2024 – Sep 2025" },
+          { title: "Full Stack Engineer", period: "Mar 2022 – Dec 2024" },
+          { title: "Junior Fullstack Developer", period: "Jul 2021 – Mar 2022" },
+          { title: "Trainee Developer", period: "Jan 2021 – Jul 2021" },
+        ],
+      },
+    ] as Entry[],
+    education: [
+      { org: "FIAP", roles: [{ title: "Postgraduate Certificate, Software Architecture", period: "Jul 2023 – Jun 2024" }] },
+      { org: "Cesupa – Centro Universitário do Estado do Pará", roles: [{ title: "Bachelor's degree, Computer Science", period: "" }] },
+    ] as Entry[],
   },
   pt: {
     lang: "EN",
-    back: "DE MASI SOFTWARE",
-    role: "Engenheiro de software sênior · Belém, Brasil",
+    role: "Engenheiro de software · Belém, Brasil",
     bio: "Construo ferramentas que tornam o trabalho do dia a dia mais simples. Grande parte do meu trabalho é em Rust e TypeScript, de utilitários de linha de comando ao código de produto.",
     trajectoryLabel: "Trajetória",
-    trajectory: ["Karma", "Terras", "CI&T"],
+    educationLabel: "Formação",
     contactLabel: "Contato",
+    present: "atual",
     switchLabel: "English",
+    trajectory: [
+      { org: "Karma", roles: [{ title: "Software Engineer", period: "set 2025 – atual" }] },
+      { org: "CI&T", roles: [{ title: "Full Stack Engineer", period: "mar 2024 – ago 2025" }] },
+      {
+        org: "Terras App Solutions",
+        roles: [
+          { title: "Senior Software Engineer", period: "dez 2024 – set 2025" },
+          { title: "Full Stack Engineer", period: "mar 2022 – dez 2024" },
+          { title: "Junior Fullstack Developer", period: "jul 2021 – mar 2022" },
+          { title: "Trainee Developer", period: "jan 2021 – jul 2021" },
+        ],
+      },
+    ] as Entry[],
+    education: [
+      { org: "FIAP", roles: [{ title: "Pós-graduação, Arquitetura de Software", period: "jul 2023 – jun 2024" }] },
+      { org: "Cesupa – Centro Universitário do Estado do Pará", roles: [{ title: "Bacharelado, Ciência da Computação", period: "" }] },
+    ] as Entry[],
   },
 } as const;
+
+function EntryList({ entries }: { entries: readonly Entry[] }) {
+  return (
+    <ul className="founder-trajectory">
+      {entries.map((entry) => (
+        <li key={entry.org}>
+          <p className="founder-org">{entry.org}</p>
+          <ul className="founder-roles">
+            {entry.roles.map((role) => (
+              <li key={role.title + role.period}>
+                <span>{role.title}</span>
+                {role.period && <span className="founder-period">{role.period}</span>}
+              </li>
+            ))}
+          </ul>
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 export function FounderPage() {
   const [lang, setLang] = useState<Lang>("en");
@@ -63,11 +120,12 @@ export function FounderPage() {
 
       <section className="founder-block">
         <p className="company-label">{t.trajectoryLabel}</p>
-        <ul className="founder-trajectory">
-          {t.trajectory.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
+        <EntryList entries={t.trajectory} />
+      </section>
+
+      <section className="founder-block founder-block--edu">
+        <p className="company-label">{t.educationLabel}</p>
+        <EntryList entries={t.education} />
       </section>
 
       <footer className="company-footer">
