@@ -11,7 +11,6 @@ body:has(.company-home) {
   --mint: #97e8c4;
   min-height: 100svh;
   display: grid;
-  grid-template-rows: auto 1fr auto auto;
   padding: 0 5.2vw;
   background: var(--paper);
   color: var(--ink);
@@ -252,4 +251,145 @@ body:has(.company-home) {
   .founder-intro { grid-template-columns: 1fr; gap: 32px; }
   .founder-photo { width: min(240px, 100%); }
   .founder-block { grid-template-columns: 1fr; gap: 16px; }
+}
+
+.company-how {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 9fr);
+  gap: 4vw;
+  padding: clamp(40px, 7vh, 88px) 0;
+  border-top: 1px solid var(--mint);
+}
+
+.company-how ol {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3vw;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.company-how li {
+  padding-top: 18px;
+  border-top: 1px solid var(--ink);
+  font-size: clamp(17px, 1.3vw, 20px);
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.company-contact {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 4vw;
+  padding: clamp(56px, 9vh, 112px) 0;
+  border-top: 1px solid var(--ink);
+}
+
+.company-contact-title {
+  margin: 14px 0 18px;
+  font-size: clamp(30px, 3.4vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -.025em;
+  font-weight: 600;
+  max-width: 16ch;
+}
+
+.contact-form {
+  display: grid;
+  gap: 22px;
+  align-content: start;
+}
+
+.contact-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.contact-field {
+  display: grid;
+  gap: 8px;
+}
+
+.contact-field span {
+  font-size: 13px;
+  letter-spacing: .04em;
+  color: var(--ink-soft);
+}
+
+.contact-field input,
+.contact-field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font: inherit;
+  font-size: 17px;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid #c9d3cc;
+  border-radius: 0;
+  outline: none;
+}
+
+.contact-field textarea {
+  resize: vertical;
+  min-height: 150px;
+  line-height: 1.5;
+}
+
+.contact-field input:focus-visible,
+.contact-field textarea:focus-visible,
+.contact-submit:focus-visible,
+.company-home a:focus-visible,
+.company-home button:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+  border-color: var(--ink);
+}
+
+.contact-honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 24px;
+}
+
+.contact-submit {
+  min-height: 48px;
+  padding: 0 26px;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--mint);
+  border: 1px solid var(--ink);
+  cursor: pointer;
+}
+
+.contact-submit:hover:not(:disabled) { background: var(--green); }
+.contact-submit:disabled { opacity: .6; cursor: progress; }
+
+.contact-status {
+  margin: 0;
+  font-size: 15px;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 900px) {
+  .company-how,
+  .company-contact { grid-template-columns: 1fr; gap: 20px; }
+  .company-how ol { grid-template-columns: 1fr; gap: 24px; }
+  .contact-row { grid-template-columns: 1fr; }
 }

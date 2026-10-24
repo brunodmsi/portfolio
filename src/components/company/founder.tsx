@@ -130,6 +130,7 @@ export function FounderPage() {
 
       <footer className="company-footer">
         <nav aria-label={t.contactLabel}>
+          <Link href="/#contact">{lang === "en" ? "Contact form" : "Formulário de contato"}</Link>
           <a href="mailto:bruno@demasi.dev">bruno@demasi.dev</a>
           <a href="https://linkedin.com/in/brunodemasi">LinkedIn</a>
           <a href="https://github.com/brunodmsi">GitHub</a>
