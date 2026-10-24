@@ -13,7 +13,7 @@ const copy = {
   en: {
     lang: "PT",
     role: "Software engineer · Belém, Brazil",
-    bio: "I design, build and improve reliable systems and tools, and I work with teams to see them through to delivery.",
+    bio: "I design, build and improve reliable systems and tools, and I work with teams to see them through to delivery. I keep learning, and AI workflows are a big part of how I do it.",
     trajectoryLabel: "Trajectory",
     educationLabel: "Education",
     contactLabel: "Contact",
@@ -40,7 +40,7 @@ const copy = {
   pt: {
     lang: "EN",
     role: "Engenheiro de software · Belém, Brasil",
-    bio: "Projeto, construo e aprimoro sistemas e ferramentas confiáveis, e trabalho com equipes para levá-los até a entrega.",
+    bio: "Projeto, construo e aprimoro sistemas e ferramentas confiáveis, e trabalho com equipes para levá-los até a entrega. Estou sempre aprendendo, e os workflows com IA são uma parte importante disso.",
     trajectoryLabel: "Trajetória",
     educationLabel: "Formação",
     contactLabel: "Contato",
