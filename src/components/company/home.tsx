@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { ContactForm } from "./contact-form";
 import "./home.css";
 
 type Lang = "en" | "pt";
@@ -18,6 +19,15 @@ const copy = {
     ],
     founder: "Founder",
     contact: "Contact",
+    howLabel: "How we work",
+    how: [
+      "We start from the problem, with the people who live it, before choosing a tool.",
+      "We design and build end to end, and stay involved from the first draft to delivery.",
+      "We keep what we build understandable, so the team that uses it can keep it going.",
+    ],
+    contactLabel: "Contact",
+    contactTitle: "Tell us what needs to exist.",
+    contactBody: "Describe the problem in your own words. A short message is enough to start.",
     registryLabel: "Registry",
     registry:
       "DE MASI SOFTWARE SOLUTIONS AND SERVICES LTDA · trading name DE MASI DEVELOPMENT · Belém, Pará, Brazil · active since March 27, 2023",
@@ -35,6 +45,15 @@ const copy = {
     ],
     founder: "Fundador",
     contact: "Contato",
+    howLabel: "Como trabalhamos",
+    how: [
+      "Partimos do problema, com quem vive o problema, antes de escolher uma ferramenta.",
+      "Desenhamos e construímos ponta a ponta, e acompanhamos desde o primeiro rascunho até a entrega.",
+      "Deixamos o que construímos compreensível, para que quem usa consiga mantê-lo.",
+    ],
+    contactLabel: "Contato",
+    contactTitle: "Conte o que precisa existir.",
+    contactBody: "Descreva o problema com as suas palavras. Uma mensagem curta basta para começar.",
     registryLabel: "Registro",
     registry:
       "DE MASI SOFTWARE SOLUTIONS AND SERVICES LTDA · nome fantasia DE MASI DEVELOPMENT · Belém (PA) · ativa desde 27/03/2023",
@@ -76,10 +95,29 @@ export function CompanyHome() {
         </ol>
       </section>
 
+      <section className="company-how" aria-label={t.howLabel}>
+        <p className="company-label">{t.howLabel}</p>
+        <ol>
+          {t.how.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ol>
+      </section>
+
+      <section id="contact" className="company-contact" aria-labelledby="contact-title">
+        <div className="company-contact-intro">
+          <p className="company-label">{t.contactLabel}</p>
+          <h2 id="contact-title" className="company-contact-title">{t.contactTitle}</h2>
+          <p className="company-body">{t.contactBody}</p>
+        </div>
+        <ContactForm lang={lang} />
+      </section>
+
       <footer className="company-footer">
         <nav aria-label="Links">
           <a href="/founder">{t.founder}</a>
-          <a href="mailto:bruno@demasi.dev">{t.contact}</a>
+          <a href="#contact">{t.contact}</a>
+          <a href="mailto:bruno@demasi.dev">bruno@demasi.dev</a>
         </nav>
         <p className="company-registry">
           <span className="company-label">{t.registryLabel}</span> {t.registry}
