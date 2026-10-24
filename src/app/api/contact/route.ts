@@ -29,18 +29,23 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "invalid" }, { status: 400 });
   }
 
+  const sentAt = new Date().toISOString();
+  const apiKey = process.env.MAILERSEND_API_KEY;
   const endpoint = process.env.CONTACT_WEBHOOK_URL;
-  if (!endpoint) {
+
+  if (apiKey ? !process.env.CONTACT_FROM_EMAIL : !endpoint) {
     return NextResponse.json({ error: "unavailable" }, { status: 503 });
   }
 
   try {
-    const res = await fetch(endpoint, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ name, email, company, message, sentAt: new Date().toISOString() }),
-      signal: AbortSignal.timeout(8000),
-    });
+    const res = apiKey
+      ? await sendWithMailerSend(apiKey, { name, email, company, message, sentAt })
+      : await fetch(endpoint as string, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ name, email, company, message, sentAt }),
+          signal: AbortSignal.timeout(8000),
+        });
     if (!res.ok) {
       return NextResponse.json({ error: "delivery" }, { status: 502 });
     }
@@ -49,4 +54,39 @@ export async function POST(request: Request) {
   }
 
   return NextResponse.json({ ok: true });
+}
+
+type Message = { name: string; email: string; company: string; message: string; sentAt: string };
+
+// MailerSend transactional API: https://developers.mailersend.com/api/v1/email.html
+// CONTACT_FROM_EMAIL must be a sender on a domain verified in MailerSend.
+// CONTACT_TO_EMAIL is where messages land (defaults to bruno@demasi.dev).
+function sendWithMailerSend(apiKey: string, msg: Message) {
+  const from = process.env.CONTACT_FROM_EMAIL ?? "";
+  const to = process.env.CONTACT_TO_EMAIL ?? "bruno@demasi.dev";
+  const lines = [
+    `Nome: ${msg.name}`,
+    `E-mail: ${msg.email}`,
+    msg.company ? `Empresa: ${msg.company}` : null,
+    "",
+    msg.message,
+    "",
+    `Enviado em ${msg.sentAt}`,
+  ].filter((line) => line !== null);
+
+  return fetch("https://api.mailersend.com/v1/email", {
+    method: "POST",
+    headers: {
+      authorization: `Bearer ${apiKey}`,
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({
+      from: { email: from, name: "DE MASI SOFTWARE" },
+      to: [{ email: to }],
+      reply_to: { email: msg.email, name: msg.name },
+      subject: `Contato pelo site: ${msg.name}`,
+      text: lines.join("\n"),
+    }),
+    signal: AbortSignal.timeout(8000),
+  });
 }
