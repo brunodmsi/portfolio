@@ -30,7 +30,7 @@ export async function POST(request: Request) {
   }
 
   const sentAt = new Date().toISOString();
-  const apiKey = process.env.MAILERSEND_API_KEY;
+  const apiKey = process.env.MILLIONSEND_API_KEY;
   const endpoint = process.env.CONTACT_WEBHOOK_URL;
 
   if (apiKey ? !process.env.CONTACT_FROM_EMAIL : !endpoint) {
@@ -39,7 +39,7 @@ export async function POST(request: Request) {
 
   try {
     const res = apiKey
-      ? await sendWithMailerSend(apiKey, { name, email, company, message, sentAt })
+      ? await sendWithMillionSend(apiKey, { name, email, company, message, sentAt })
       : await fetch(endpoint as string, {
           method: "POST",
           headers: { "content-type": "application/json" },
@@ -58,10 +58,10 @@ export async function POST(request: Request) {
 
 type Message = { name: string; email: string; company: string; message: string; sentAt: string };
 
-// MailerSend transactional API: https://developers.mailersend.com/api/v1/email.html
-// CONTACT_FROM_EMAIL must be a sender on a domain verified in MailerSend.
+// MillionSend email API, Resend-compatible: https://millionsend.com
+// CONTACT_FROM_EMAIL must be an address on a domain verified in MillionSend.
 // CONTACT_TO_EMAIL is where messages land (defaults to bruno@demasi.dev).
-function sendWithMailerSend(apiKey: string, msg: Message) {
+function sendWithMillionSend(apiKey: string, msg: Message) {
   const from = process.env.CONTACT_FROM_EMAIL ?? "";
   const to = process.env.CONTACT_TO_EMAIL ?? "bruno@demasi.dev";
   const lines = [
@@ -74,16 +74,16 @@ function sendWithMailerSend(apiKey: string, msg: Message) {
     `Enviado em ${msg.sentAt}`,
   ].filter((line) => line !== null);
 
-  return fetch("https://api.mailersend.com/v1/email", {
+  return fetch("https://api.millionsend.com/emails", {
     method: "POST",
     headers: {
       authorization: `Bearer ${apiKey}`,
       "content-type": "application/json",
     },
     body: JSON.stringify({
-      from: { email: from, name: "DE MASI SOFTWARE" },
-      to: [{ email: to }],
-      reply_to: { email: msg.email, name: msg.name },
+      from: `DE MASI SOFTWARE <${from}>`,
+      to: [to],
+      reply_to: msg.email,
       subject: `Contato pelo site: ${msg.name}`,
       text: lines.join("\n"),
     }),
